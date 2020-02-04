@@ -38,6 +38,8 @@ for (i in seq_len(n_phylogenies)) {
 pir_paramses <- list()
 for (i in seq_len(n_phylogenies)) {
 
+  print(paste(i, "/", n_phylogenies))
+
   alignment_params <- create_alignment_params(
     sim_tral_fun = get_sim_tral_with_std_nsm_fun(
       mutation_rate = 0.1,
@@ -56,12 +58,17 @@ for (i in seq_len(n_phylogenies)) {
   generative_experiment$inference_model$mcmc$treelog$filename <- paste0("true_alignment_gen_", i ,".trees")
   generative_experiment$inference_model$mcmc$screenlog$filename <- paste0("true_alignment_gen_", i ,".csv")
   generative_experiment$errors_filename <- paste0("true_errors_gen_", i ,".csv")
-  # check_experiment(generative_experiment)
 
-  # All non-Yule tree priors
+  # Only pure-birth and birth-death models
+  nee_tree_priors <- list()
+  nee_tree_priors[[1]] <- create_yule_tree_prior()
+  nee_tree_priors[[2]] <- create_bd_tree_prior()
+
   candidate_experiments <- create_all_experiments(
+    tree_priors = nee_tree_priors,
     exclude_model = generative_experiment$inference_model
   )
+
   for (j in seq_along(candidate_experiments)) {
     candidate_experiments[[j]]$beast2_options$input_filename <- paste0("true_alignment_best_", i ,".xml")
     candidate_experiments[[j]]$beast2_options$output_state_filename <- paste0("true_alignment_best_", i ,".xml.state")
@@ -70,8 +77,6 @@ for (i in seq_len(n_phylogenies)) {
     candidate_experiments[[j]]$inference_model$mcmc$screenlog$filename <- paste0("true_alignment_best_", i ,".csv")
     candidate_experiments[[j]]$errors_filename <- paste0("true_errors_best_", i ,".csv")
   }
-  # check_experiments(candidate_experiments)
-
   experiments <- c(list(generative_experiment), candidate_experiments)
 
   # Set the RNG seed
@@ -87,8 +92,6 @@ for (i in seq_len(n_phylogenies)) {
       epsilon = 1e-12
     )
   }
-
-  #check_experiments(experiments)
 
   # Shorter on Travis
   if (is_on_travis() || TRUE) {
@@ -127,7 +130,6 @@ for (i in seq_len(n_phylogenies)) {
   )
 
   pir_paramses[[i]] <- pir_params
-  # check_pir_params(pir_paramses[[i]])
 }
 
 ################################################################################
@@ -139,7 +141,7 @@ for (pir_params in pir_paramses) {
 }
 
 ################################################################################
-# Do the one run
+# Do the runs
 ################################################################################
 pir_outs <- pir_runs(
   phylogenies = phylogenies,
