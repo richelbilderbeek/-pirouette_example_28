@@ -1,0 +1,21 @@
+Package: pirouette_example_2
+Type: Package
+Title: Pirouette Example Two
+Version: 1.0
+Authors@R: c(
+  person("Richel", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
+Author: Richel J.C. Bilderbeek <richel@richelbilderbeek.nl>
+Maintainer: Richel J.C. Bilderbeek <richel@richelbilderbeek.nl>
+Description: A 'pirouette' example.
+  The main repo for the code is 'pirouette'.
+  The main repo for the scripts is this repo.
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    beastier (>= 2.0.25),
+    beautier (>= 2.3),
+    pirouette (>= 1.6),
+    nLTT (>= 1.4.2)
+Suggests: 
+    tidyr

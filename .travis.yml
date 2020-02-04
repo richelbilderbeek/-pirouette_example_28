@@ -1,0 +1,60 @@
+language: r
+dist: bionic
+cache: packages
+
+r_github_packages:
+  - Giappo/mbd
+  - richelbilderbeek/mcbette
+  - richelbilderbeek/ribir
+  - richelbilderbeek/becosys
+  - thijsjanzen/nodeSub
+  - richelbilderbeek/pirouette
+  - richelbilderbeek/peregrine
+
+before_install:
+  # ImageMagick
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo add-apt-repository -y ppa:opencpu/imagemagick; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install -y libmagick++-dev; fi
+  # Rmpfr
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt install -qq libmpfr-dev; fi
+  # Java
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R CMD javareconf; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R --quiet -e 'install.packages("rJava", type="source", repos="http://cran.us.r-project.org")'; fi
+
+before_script:
+  - Rscript -e "beastier::install_beast2()"
+  - Rscript -e "mauricer::install_beast2_pkg(\"NS\")"
+
+script:
+  # Go!
+  - travis_wait 60 ./scripts/rerun.sh
+  # Check if all files are created
+  # Basic files: true alignment
+  - if [ ! -f example_28_314/true_alignment.fas ]; then echo "file 'true_alignment.fas' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment.png ]; then echo "file 'true_alignment.png' not found" ; exit 1 ; fi
+  # Basic files: true alignment, generative model
+  - if [ ! -f example_28_314/true_alignment_gen.xml ]; then echo "file 'true_alignment_gen.xml' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen.xml.state ]; then echo "file 'true_alignment_gen.xml.state' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen.log ]; then echo "file 'true_alignment_gen.log' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen.trees ]; then echo "file 'true_alignment_gen.trees' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen.csv ]; then echo "file 'true_alignment_gen.csv' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_errors_gen.csv ]; then echo "file 'true_errors_gen.csv' not found" ; exit 1 ; fi
+  # Basic files: true alignment, best candidate model
+  - if [ ! -f example_28_314/true_alignment_best.xml ]; then echo "file 'true_alignment_best.xml' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best.xml.state ]; then echo "file 'true_alignment_best.xml.state' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best.log ]; then echo "file 'true_alignment_best.log' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best.trees ]; then echo "file 'true_alignment_best.trees' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best.csv ]; then echo "file 'true_alignment_best.csv' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_errors_best.csv ]; then echo "file 'true_errors_best.csv' not found" ; exit 1 ; fi
+  # Derived files: true alignment, generative model
+  - if [ ! -f example_28_314/esses_gen.latex ]; then echo "file 'esses_gen.latex' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_error_violin_gen.png ]; then echo "file 'true_error_violin_gen.png' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_posterior_gen.png ]; then echo "file 'true_posterior_gen.png' not found" ; exit 1 ; fi
+  # Derived files: true alignment, best candidate model
+  - if [ ! -f example_28_314/esses_best.latex ]; then echo "file 'esses_best.latex' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_error_violin_best.png ]; then echo "file 'true_error_violin_best.png' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_posterior_best.png ]; then echo "file 'true_posterior_best.png' not found" ; exit 1 ; fi
+
+after_success:
+  - cd ~/GitHubs/pirouette_article; find .
