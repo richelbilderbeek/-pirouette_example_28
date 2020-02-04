@@ -3,7 +3,7 @@ library(pirouette)
 library(babette)
 
 root_folder <- getwd()
-example_no <- 2
+example_no <- 28
 rng_seed <- 314
 example_folder <- file.path(root_folder, paste0("example_", example_no, "_", rng_seed))
 dir.create(example_folder, showWarnings = FALSE, recursive = TRUE)
@@ -11,100 +11,159 @@ setwd(example_folder)
 set.seed(rng_seed)
 testit::assert(is_beast2_installed())
 
-phylogeny <- create_yule_tree(n_taxa = 6, crown_age = 10)
-ape::write.tree(phylogeny, file = "true_tree.newick")
+n_phylogenies <- 2
+phylogenies <- list()
 
-alignment_params <- create_alignment_params(
-  sim_tral_fun = get_sim_tral_with_std_nsm_fun(
-    mutation_rate = 0.1,
-    site_model = beautier::create_jc69_site_model()
-  ),
-  root_sequence = create_blocked_dna(length = 1000),
-  rng_seed = rng_seed,
-  fasta_filename = "true_alignment.fas"
-)
+################################################################################
+# Creates phylogenies
+################################################################################
+for (i in seq_len(n_phylogenies)) {
+  print(paste(i, "/", n_phylogenies))
+  speciation_rate <- 0.8 # lambda
+  extinction_rate <- 0.1 # mu
+  carrying_capacity <- 40 # clade-level
+  crown_age <- 10
+  dd_parameters <- c(speciation_rate, extinction_rate, carrying_capacity)
+  ddmodel <- 1 # linear dependence in speciation rate with parameter K
+  set.seed(i)
+  dd_sim_result <- DDD::dd_sim(pars = dd_parameters, age  = crown_age, ddmodel = ddmodel)
+  phylogeny <- dd_sim_result$tes # Only extant species
+  phylogenies[[i]] <- phylogeny
 
-# JC69, strict, Yule
-generative_experiment <- create_gen_experiment()
-generative_experiment$beast2_options$input_filename <- "true_alignment_gen.xml"
-generative_experiment$beast2_options$output_state_filename <- "true_alignment_gen.xml.state"
-generative_experiment$inference_model$mcmc$tracelog$filename <- "true_alignment_gen.log"
-generative_experiment$inference_model$mcmc$treelog$filename <- "true_alignment_gen.trees"
-generative_experiment$inference_model$mcmc$screenlog$filename <- "true_alignment_gen.csv"
-generative_experiment$errors_filename <- "true_errors_gen.csv"
-check_experiment(generative_experiment)
-
-# All non-Yule tree priors
-candidate_experiments <- create_all_experiments(
-  exclude_model = generative_experiment$inference_model
-)
-for (i in seq_along(candidate_experiments)) {
-  candidate_experiments[[i]]$beast2_options$input_filename <- "true_alignment_best.xml"
-  candidate_experiments[[i]]$beast2_options$output_state_filename <- "true_alignment_best.xml.state"
-  candidate_experiments[[i]]$inference_model$mcmc$tracelog$filename <- "true_alignment_best.log"
-  candidate_experiments[[i]]$inference_model$mcmc$treelog$filename <- "true_alignment_best.trees"
-  candidate_experiments[[i]]$inference_model$mcmc$screenlog$filename <- "true_alignment_best.csv"
-  candidate_experiments[[i]]$errors_filename <- "true_errors_best.csv"
-}
-check_experiments(candidate_experiments)
-
-experiments <- c(list(generative_experiment), candidate_experiments)
-
-# Set the RNG seed
-for (i in seq_along(experiments)) {
-  experiments[[i]]$beast2_options$rng_seed <- rng_seed
 }
 
-# Setup estimation of evidences (aka marginal likelihoods)
-for (i in seq_along(experiments)) {
-  experiments[[i]]$est_evidence_mcmc <- create_mcmc_nested_sampling(
-    chain_length = 1e7,
-    store_every = 1e3,
-    epsilon = 1e-12
+################################################################################
+# Create piriouette parameter sets
+################################################################################
+pir_paramses <- list()
+for (i in seq_len(n_phylogenies)) {
+
+  alignment_params <- create_alignment_params(
+    sim_tral_fun = get_sim_tral_with_std_nsm_fun(
+      mutation_rate = 0.1,
+      site_model = beautier::create_jc69_site_model()
+    ),
+    root_sequence = create_blocked_dna(length = 1000),
+    rng_seed = rng_seed,
+    fasta_filename = paste0("true_alignment_", i, ".fas")
   )
-}
 
-check_experiments(experiments)
+  # JC69, strict, Yule
+  generative_experiment <- create_gen_experiment()
+  generative_experiment$beast2_options$input_filename <- paste0("true_alignment_gen_", i ,".xml")
+  generative_experiment$beast2_options$output_state_filename <- paste0("true_alignment_gen_", i ,".xml.state")
+  generative_experiment$inference_model$mcmc$tracelog$filename <- paste0("true_alignment_gen_", i ,".log")
+  generative_experiment$inference_model$mcmc$treelog$filename <- paste0("true_alignment_gen_", i ,".trees")
+  generative_experiment$inference_model$mcmc$screenlog$filename <- paste0("true_alignment_gen_", i ,".csv")
+  generative_experiment$errors_filename <- paste0("true_errors_gen_", i ,".csv")
+  # check_experiment(generative_experiment)
 
-# Shorter on Travis
-if (is_on_travis()) {
-  for (i in seq_along(experiments)) {
-    experiments[[i]]$inference_model$mcmc$chain_length <- 3000
-    experiments[[i]]$inference_model$mcmc$store_every <- 1000
-    experiments[[i]]$est_evidence_mcmc$chain_length <- 3000
-    experiments[[i]]$est_evidence_mcmc$store_every <- 1000
-    experiments[[i]]$est_evidence_mcmc$epsilon <- 100.0
+  # All non-Yule tree priors
+  candidate_experiments <- create_all_experiments(
+    exclude_model = generative_experiment$inference_model
+  )
+  for (j in seq_along(candidate_experiments)) {
+    candidate_experiments[[j]]$beast2_options$input_filename <- paste0("true_alignment_best_", i ,".xml")
+    candidate_experiments[[j]]$beast2_options$output_state_filename <- paste0("true_alignment_best_", i ,".xml.state")
+    candidate_experiments[[j]]$inference_model$mcmc$tracelog$filename <- paste0("true_alignment_best_", i ,".log")
+    candidate_experiments[[j]]$inference_model$mcmc$treelog$filename <- paste0("true_alignment_best_", i ,".trees")
+    candidate_experiments[[j]]$inference_model$mcmc$screenlog$filename <- paste0("true_alignment_best_", i ,".csv")
+    candidate_experiments[[j]]$errors_filename <- paste0("true_errors_best_", i ,".csv")
   }
+  # check_experiments(candidate_experiments)
+
+  experiments <- c(list(generative_experiment), candidate_experiments)
+
+  # Set the RNG seed
+  for (j in seq_along(experiments)) {
+    experiments[[j]]$beast2_options$rng_seed <- rng_seed
+  }
+
+  # Setup estimation of evidences (aka marginal likelihoods)
+  for (j in seq_along(experiments)) {
+    experiments[[j]]$est_evidence_mcmc <- create_mcmc_nested_sampling(
+      chain_length = 1e7,
+      store_every = 1e3,
+      epsilon = 1e-12
+    )
+  }
+
+  #check_experiments(experiments)
+
+  # Shorter on Travis
+  if (is_on_travis() || TRUE) {
+    for (j in seq_along(experiments)) {
+      experiments[[j]]$inference_model$mcmc$chain_length <- 3000
+      experiments[[j]]$inference_model$mcmc$store_every <- 1000
+      experiments[[j]]$est_evidence_mcmc$chain_length <- 3000
+      experiments[[j]]$est_evidence_mcmc$store_every <- 1000
+      experiments[[j]]$est_evidence_mcmc$epsilon <- 100.0
+    }
+  }
+
+  twinning_params <- create_twinning_params(
+    rng_seed_twin_tree = rng_seed,
+    sim_twin_tree_fun = get_sim_bd_twin_tree_fun(),
+    rng_seed_twin_alignment = rng_seed,
+    sim_twal_fun = get_sim_twal_with_std_nsm_fun(
+      mutation_rate = pirouette::create_standard_mutation_rate(
+        phylogeny
+      )
+    ),
+    twin_tree_filename = paste0("twin_tree_", i ,".newick"),
+    twin_alignment_filename = paste0("twin_alignment_", i ,".fas"),
+    twin_evidence_filename = paste0("twin_evidence_", i ,".csv")
+  )
+
+  error_measure_params <- pirouette::create_error_measure_params(
+    error_fun = pirouette::get_gamma_error_fun()
+  )
+
+  pir_params <- create_pir_params(
+    alignment_params = alignment_params,
+    experiments = experiments,
+    twinning_params = twinning_params,
+    error_measure_params = error_measure_params
+  )
+
+  pir_paramses[[i]] <- pir_params
+  # check_pir_params(pir_paramses[[i]])
 }
 
-pir_params <- create_pir_params(
-  alignment_params = alignment_params,
-  experiments = experiments
-)
+################################################################################
+# Delete previous files
+################################################################################
+for (pir_params in pir_paramses) {
+  check_pir_params(pir_params)
+  rm_pir_param_files(pir_params)
+}
 
-rm_pir_param_files(pir_params)
-
-errors <- pir_run(
-  phylogeny,
-  pir_params = pir_params
+################################################################################
+# Do the one run
+################################################################################
+pir_outs <- pir_runs(
+  phylogenies = phylogenies,
+  pir_paramses = pir_paramses
 )
 
 utils::write.csv(
-  x = errors,
+  x = pir_outs,
   file = file.path(example_folder, "errors.csv"),
   row.names = FALSE
 )
 
-pir_plot(errors) +
+pir_plots(pir_outs) +
   ggsave(file.path(example_folder, "errors.png"))
 
-pir_to_pics(
-  phylogeny = phylogeny,
-  pir_params = pir_params,
-  folder = example_folder
-)
+if (1 == 2) {
+  pir_to_pics(
+    phylogeny = phylogeny,
+    pir_params = pir_params,
+    folder = example_folder
+  )
 
-pir_to_tables(
-  pir_params = pir_params,
-  folder = example_folder
-)
+  pir_to_tables(
+    pir_params = pir_params,
+    folder = example_folder
+  )
+}
