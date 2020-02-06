@@ -10,6 +10,14 @@ that shows the pirouette plot for multiple DD trees.
 
 This figure is to be used for the pirouette article.
 
+## Run-times
+
+Wall clock time 
+n_taxa|chain_length|wallclock_time (mins, ceil)
+------|------------|-------------------------
+4     | 3k         |5
+
+
 ## Results
 
 ![](example_28_314/errors.png)
