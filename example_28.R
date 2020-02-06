@@ -1,3 +1,5 @@
+# pirouette example 28:
+# multiple DD trees for pirouette article
 suppressMessages(library(ggplot2))
 library(pirouette)
 library(babette)
@@ -11,7 +13,7 @@ setwd(example_folder)
 set.seed(rng_seed)
 testit::assert(is_beast2_installed())
 
-n_phylogenies <- 2
+n_phylogenies <- 1
 phylogenies <- list()
 
 ################################################################################
