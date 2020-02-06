@@ -1,24 +1,24 @@
-<itsabeastystatewerein version='2.0' sample='3000'>
-<statenode id='Tree.t:true_alignment_1'>(((0:0.7801943463928506,4:0.7801943463928506)6:0.24349489191011353,(2:0.8761209414383112,3:0.8761209414383112)7:0.1475682968646529)5:0.010421997086151213,1:1.0341112353891153)8:0.0</statenode>
-<statenode id='kappa1.s:true_alignment_1'>kappa1.s:true_alignment_1[1 1] (0.0,Infinity): 2.0 </statenode>
-<statenode id='kappa2.s:true_alignment_1'>kappa2.s:true_alignment_1[1 1] (0.0,Infinity): 1.6177426293336294 </statenode>
-<statenode id='freqParameter.s:true_alignment_1'>freqParameter.s:true_alignment_1[4 1] (0.0,1.0): 0.24104028034507619 0.2589597196549238 0.25 0.25 </statenode>
-<statenode id='BDBirthRate.t:true_alignment_1'>BDBirthRate.t:true_alignment_1[1 1] (0.0,10000.0): 1.046638358324103 </statenode>
-<statenode id='BDDeathRate.t:true_alignment_1'>BDDeathRate.t:true_alignment_1[1 1] (0.0,1.0): 0.26938520523187365 </statenode>
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:true_alignment_1'>((((((0:0.5633057177255827,7:0.5633057177255827)52:0.12021603309412321,(5:0.2392769573343175,29:0.2392769573343175)66:0.44424479348538837)80:0.10275481249010465,(1:0.33759523706921984,27:0.33759523706921984)44:0.4486813262405907)60:0.04845535347837637,(8:0.6365329496547978,(17:0.02776504775900808,40:0.02776504775900808)54:0.6087679018957897)53:0.19819896713338914)71:0.023755519782375112,((3:0.7467300303259119,((20:0.15253939099931094,31:0.15253939099931094)57:0.3001446909315175,(23:0.4215902478885125,((37:0.0369383129616172,39:0.0369383129616172)69:0.016699717866999753,42:0.053638030828616956)70:0.36795221705989556)47:0.031093834042315915)49:0.29404594839508347)61:0.07505364158865435,((11:0.08043707865336104,34:0.08043707865336104)45:0.5423596653404823,((14:0.12652804242516194,32:0.12652804242516194)83:0.001722825025480823,33:0.12825086745064276)81:0.4945458765432006)55:0.19898692792072292)75:0.036703764655995785)63:0.11641018166189254,(((2:0.7290234518127349,(6:0.6678997962271336,(19:0.4340237662399341,((24:0.051611071320334385,38:0.051611071320334385)46:0.04532337199629168,((35:0.026765510360939552,41:0.026765510360939552)79:0.04109639988468594,36:0.06786191024562549)48:0.029072533071000578)58:0.33708932292330807)64:0.23387602998719947)76:0.06112365558560129)82:0.17639437435199312,(((10:0.5555677088298437,(18:0.2666400031571949,30:0.2666400031571949)68:0.28892770567264886)56:0.06592967137353867,12:0.6214973802033824)67:0.08560891732912901,(13:0.5684233666240697,(21:0.2916914577100597,28:0.2916914577100597)59:0.27673190891400995)51:0.13868293090844175)43:0.19831152863221657)78:0.030229991133289502,((4:0.9217233282407212,(9:0.6311010681990773,26:0.6311010681990773)65:0.29062226004164393)74:0.005367139226005957,(15:0.5756467224597902,((16:0.35369122585569374,25:0.35369122585569374)50:0.09622262308544582,22:0.44991384894113956)73:0.12573287351865065)77:0.351443745006937)62:0.008557349831290306)72:0.039249800934437085)84:0.0</statenode>
+<statenode id='kappa1.s:true_alignment_1'>kappa1.s:true_alignment_1[1 1] (0.0,Infinity): 1.0616614039792955 </statenode>
+<statenode id='kappa2.s:true_alignment_1'>kappa2.s:true_alignment_1[1 1] (0.0,Infinity): 1.0207979726399152 </statenode>
+<statenode id='freqParameter.s:true_alignment_1'>freqParameter.s:true_alignment_1[4 1] (0.0,1.0): 0.24675361815514077 0.241210031423395 0.2520614600918549 0.25997489032960985 </statenode>
+<statenode id='BDBirthRate.t:true_alignment_1'>BDBirthRate.t:true_alignment_1[1 1] (0.0,10000.0): 1.5641995360534628 </statenode>
+<statenode id='BDDeathRate.t:true_alignment_1'>BDDeathRate.t:true_alignment_1[1 1] (0.0,1.0): 0.09421183941283205 </statenode>
 </itsabeastystatewerein>
 <!--
 {"operators":[
-{"id":"BirthRateScaler.t:true_alignment_1","p":0.75,"accept":90,"reject":18,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
-{"id":"DeathRateScaler.t:true_alignment_1","p":0.75,"accept":99,"reject":18,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
-{"id":"BirthDeathTreeScaler.t:true_alignment_1","p":0.5,"accept":7,"reject":107,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
-{"id":"BirthDeathTreeRootScaler.t:true_alignment_1","p":0.5,"accept":12,"reject":105,"acceptFC":0,"rejectFC":0,"rejectIv":35,"rejectOp":35},
-{"id":"BirthDeathUniformOperator.t:true_alignment_1","p":"NaN","accept":421,"reject":706,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
-{"id":"BirthDeathSubtreeSlide.t:true_alignment_1","p":1,"accept":54,"reject":534,"acceptFC":0,"rejectFC":0,"rejectIv":171,"rejectOp":171},
-{"id":"BirthDeathNarrow.t:true_alignment_1","p":"NaN","accept":343,"reject":227,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
-{"id":"BirthDeathWide.t:true_alignment_1","p":"NaN","accept":15,"reject":107,"acceptFC":0,"rejectFC":0,"rejectIv":66,"rejectOp":66},
-{"id":"BirthDeathWilsonBalding.t:true_alignment_1","p":"NaN","accept":7,"reject":121,"acceptFC":0,"rejectFC":0,"rejectIv":70,"rejectOp":70},
-{"id":"kappa1Scaler.s:true_alignment_1","p":0.5,"accept":0,"reject":3,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
-{"id":"kappa2Scaler.s:true_alignment_1","p":0.5,"accept":2,"reject":2,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
-{"id":"FrequenciesExchanger.s:true_alignment_1","p":0.010000000000000004,"accept":1,"reject":2,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0}
+{"id":"BirthRateScaler.t:true_alignment_1","p":0.4012477571303795,"accept":95177,"reject":287962,"acceptFC":94486,"rejectFC":287575,"rejectIv":0,"rejectOp":0},
+{"id":"DeathRateScaler.t:true_alignment_1","p":0.15026385741759407,"accept":105850,"reject":277396,"acceptFC":104934,"rejectFC":277220,"rejectIv":52035,"rejectOp":52035},
+{"id":"BirthDeathTreeScaler.t:true_alignment_1","p":0.892301119832507,"accept":48947,"reject":334483,"acceptFC":48906,"rejectFC":333354,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathTreeRootScaler.t:true_alignment_1","p":0.8255847833058501,"accept":38238,"reject":344423,"acceptFC":38198,"rejectFC":343378,"rejectIv":121708,"rejectOp":121708},
+{"id":"BirthDeathUniformOperator.t:true_alignment_1","p":"NaN","accept":849059,"reject":2982989,"acceptFC":846262,"rejectFC":2974553,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathSubtreeSlide.t:true_alignment_1","p":0.1789744798292217,"accept":223431,"reject":1692488,"acceptFC":223225,"rejectFC":1687221,"rejectIv":387330,"rejectOp":387330},
+{"id":"BirthDeathNarrow.t:true_alignment_1","p":"NaN","accept":318879,"reject":1595531,"acceptFC":317815,"rejectFC":1591125,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathWide.t:true_alignment_1","p":"NaN","accept":1293,"reject":382366,"acceptFC":1282,"rejectFC":381259,"rejectIv":193738,"rejectOp":193738},
+{"id":"BirthDeathWilsonBalding.t:true_alignment_1","p":"NaN","accept":2479,"reject":380650,"acceptFC":2452,"rejectFC":379574,"rejectIv":36985,"rejectOp":36985},
+{"id":"kappa1Scaler.s:true_alignment_1","p":0.7573560014382981,"accept":2292,"reject":10478,"acceptFC":2286,"rejectFC":10449,"rejectIv":0,"rejectOp":0},
+{"id":"kappa2Scaler.s:true_alignment_1","p":0.6889444831279007,"accept":1669,"reject":11099,"acceptFC":1663,"rejectFC":11075,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:true_alignment_1","p":0.020211794721600986,"accept":2907,"reject":9915,"acceptFC":2889,"rejectFC":9895,"rejectIv":0,"rejectOp":0}
 ]}
 -->
