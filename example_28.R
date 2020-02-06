@@ -5,7 +5,7 @@ library(pirouette)
 library(babette)
 
 is_testing <- FALSE
-if (is_on_travis() || TRUE) {
+if (is_on_travis()) {
   is_testing <- TRUE
 }
 
@@ -33,9 +33,6 @@ for (i in seq_len(n_phylogenies)) {
   speciation_rate <- 0.8 # lambda
   extinction_rate <- 0.1 # mu
   carrying_capacity <- 40 # clade-level
-  if (is_testing) {
-    carrying_capacity <- 16
-  }
   dd_parameters <- c(speciation_rate, extinction_rate, carrying_capacity)
   ddmodel <- 1 # linear dependence in speciation rate with parameter K
   set.seed(i)
