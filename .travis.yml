@@ -31,30 +31,23 @@ script:
   - travis_wait 60 ./scripts/rerun.sh
   # Check if all files are created
   # Basic files: true alignment
-  - if [ ! -f example_28_314/true_alignment.fas ]; then echo "file 'true_alignment.fas' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment.png ]; then echo "file 'true_alignment.png' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_1.fas ]; then echo "file 'true_alignment_1.fas' not found" ; exit 1 ; fi
   # Basic files: true alignment, generative model
-  - if [ ! -f example_28_314/true_alignment_gen.xml ]; then echo "file 'true_alignment_gen.xml' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen.xml.state ]; then echo "file 'true_alignment_gen.xml.state' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen.log ]; then echo "file 'true_alignment_gen.log' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen.trees ]; then echo "file 'true_alignment_gen.trees' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen.csv ]; then echo "file 'true_alignment_gen.csv' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_errors_gen.csv ]; then echo "file 'true_errors_gen.csv' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen_1.xml ]; then echo "file 'true_alignment_gen_1.xml' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen_1.xml.state ]; then echo "file 'true_alignment_gen_1.xml.state' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen_1.log ]; then echo "file 'true_alignment_gen_1.log' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen_1.trees ]; then echo "file 'true_alignment_gen_1.trees' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_gen_1.csv ]; then echo "file 'true_alignment_gen_1.csv' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_errors_gen_1.csv ]; then echo "file 'true_errors_gen_1.csv' not found" ; exit 1 ; fi
   # Basic files: true alignment, best candidate model
-  - if [ ! -f example_28_314/true_alignment_best.xml ]; then echo "file 'true_alignment_best.xml' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best.xml.state ]; then echo "file 'true_alignment_best.xml.state' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best.log ]; then echo "file 'true_alignment_best.log' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best.trees ]; then echo "file 'true_alignment_best.trees' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best.csv ]; then echo "file 'true_alignment_best.csv' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_errors_best.csv ]; then echo "file 'true_errors_best.csv' not found" ; exit 1 ; fi
-  # Derived files: true alignment, generative model
-  - if [ ! -f example_28_314/esses_gen.latex ]; then echo "file 'esses_gen.latex' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_error_violin_gen.png ]; then echo "file 'true_error_violin_gen.png' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_posterior_gen.png ]; then echo "file 'true_posterior_gen.png' not found" ; exit 1 ; fi
-  # Derived files: true alignment, best candidate model
-  - if [ ! -f example_28_314/esses_best.latex ]; then echo "file 'esses_best.latex' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_error_violin_best.png ]; then echo "file 'true_error_violin_best.png' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_posterior_best.png ]; then echo "file 'true_posterior_best.png' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best_1.xml ]; then echo "file 'true_alignment_best_1.xml' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best_1.xml.state ]; then echo "file 'true_alignment_best_1.xml.state' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best_1.log ]; then echo "file 'true_alignment_best_1.log' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best_1.trees ]; then echo "file 'true_alignment_best_1.trees' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_alignment_best_1.csv ]; then echo "file 'true_alignment_best_1.csv' not found" ; exit 1 ; fi
+  - if [ ! -f example_28_314/true_errors_best_1.csv ]; then echo "file 'true_errors_best_1.csv' not found" ; exit 1 ; fi
+  # Final result
+  - if [ ! -f example_28_314/errors.png ]; then echo "file 'errors.png' not found" ; exit 1 ; fi
 
 after_success:
   - cd ~/GitHubs/pirouette_article; find .
