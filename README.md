@@ -13,10 +13,10 @@ This figure is to be used for the pirouette article.
 ## Run-times
 
 Wall clock time 
-n_taxa|chain_length|wallclock_time (mins, ceil)
-------|------------|-------------------------
-4     | 3k         |5
-
+n_taxa|chain_length|wallclock_time (mins, ceil)|wallclock_time (hours)
+------|------------|---------------------------|----------------------------
+4     | 3k         |5                          |0.08
+40    | 10M        |158                        |2.6
 
 ## Results
 
