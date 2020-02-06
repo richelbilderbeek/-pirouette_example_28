@@ -10,6 +10,9 @@ if (is_on_travis() || TRUE) {
   is_testing <- TRUE
 }
 
+if (1 == 2) {
+  setwd("~/GitHubs/pirouette_example_28")
+}
 root_folder <- getwd()
 example_no <- 28
 rng_seed <- 314
@@ -40,7 +43,6 @@ for (i in seq_len(n_phylogenies)) {
   dd_sim_result <- DDD::dd_sim(pars = dd_parameters, age  = crown_age, ddmodel = ddmodel)
   phylogeny <- dd_sim_result$tes # Only extant species
   phylogenies[[i]] <- phylogeny
-
 }
 
 ################################################################################
@@ -231,13 +233,23 @@ for (i in seq_len(n_phylogenies)) {
   generative_experiment$inference_model$mcmc$screenlog$filename <- paste0("true_alignment_gen_", i ,".csv")
   generative_experiment$errors_filename <- paste0("true_errors_gen_", i ,".csv")
 
+  site_models <- create_site_models()
+  clock_models <- create_clock_models()
+  if (is_testing) {
+    site_models <- list()
+    site_models[[1]] <- create_hky_site_model()
+    clock_models <- list()
+    clock_models[[1]] <- create_strict_clock_model()
+  }
   # Only pure-birth and birth-death models
-  nee_tree_priors <- list()
-  nee_tree_priors[[1]] <- create_yule_tree_prior()
-  nee_tree_priors[[2]] <- create_bd_tree_prior()
+  tree_priors <- list()
+  tree_priors[[1]] <- create_yule_tree_prior()
+  tree_priors[[2]] <- create_bd_tree_prior()
 
   candidate_experiments <- create_all_experiments(
-    tree_priors = nee_tree_priors,
+    site_models = site_models,
+    clock_models = clock_models,
+    tree_priors = tree_priors,
     exclude_model = generative_experiment$inference_model
   )
 
@@ -266,7 +278,7 @@ for (i in seq_len(n_phylogenies)) {
   }
 
   # Shorter on Travis
-  if (is_on_travis() || TRUE) {
+  if (is_testing) {
     for (j in seq_along(experiments)) {
       experiments[[j]]$inference_model$mcmc$chain_length <- 3000
       experiments[[j]]$inference_model$mcmc$store_every <- 1000
@@ -327,9 +339,6 @@ utils::write.csv(
 )
 
 pir_plots(pir_outs) +
-  ggsave(file.path(example_folder, "errors.png"))
-
-
   ggsave(file.path(example_folder, "errors.png"))
 
 if (1 == 2) {
