@@ -8,5 +8,5 @@
 #
 #
 rm -rf example_28_314
-Rscript example_28.R
+time Rscript example_28.R
 
