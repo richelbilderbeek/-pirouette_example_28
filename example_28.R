@@ -21,7 +21,7 @@ setwd(example_folder)
 set.seed(rng_seed)
 testit::assert(is_beast2_installed())
 
-n_phylogenies <- 1
+n_phylogenies <- 5
 phylogenies <- list()
 
 ################################################################################
