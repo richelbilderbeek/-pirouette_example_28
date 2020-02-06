@@ -1,0 +1,47 @@
+#
+#model:
+#
+#<?xml version="1.0" encoding="UTF-8" standalone="no"?><input id="posterior" spec="beast.core.util.CompoundDistribution">
+#    <distribution id="prior" spec="beast.core.util.CompoundDistribution">
+#        <distribution id="YuleModel.t:twin_alignment_1" spec="beast.evolution.speciation.YuleModel">
+#            <parameter id="birthRate.t:twin_alignment_1" name="birthDiffRate" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            <tree id="Tree.t:twin_alignment_1" spec="beast.evolution.tree.Tree">
+#                <taxonset id="TaxonSet.twin_alignment_1" spec="beast.evolution.alignment.TaxonSet">
+#                </taxonset>
+#            </tree>
+#        </distribution>
+#        <prior id="YuleBirthRatePrior.t:twin_alignment_1" name="distribution" x="@birthRate.t:twin_alignment_1">
+#            <Uniform id="Uniform.100" name="distr" upper="Infinity"/>
+#        </prior>
+#        <prior id="KappaPrior.s:twin_alignment_1" name="distribution">
+#            <parameter id="kappa.s:twin_alignment_1" lower="0.0" name="x" spec="beast.core.parameter.RealParameter">2.0</parameter>
+#            <LogNormal id="LogNormalDistributionModel.0" name="distr">
+#                <parameter estimate="false" id="RealParameter.0" name="M" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#                <parameter estimate="false" id="RealParameter.1" lower="0.0" name="S" spec="beast.core.parameter.RealParameter" upper="Infinity">1.25</parameter>
+#            </LogNormal>
+#        </prior>
+#    </distribution>
+#    <distribution id="likelihood" spec="beast.core.util.CompoundDistribution" useThreads="true">
+#        <distribution data="@twin_alignment_1" id="treeLikelihood.twin_alignment_1" spec="beast.evolution.likelihood.ThreadedTreeLikelihood" tree="@Tree.t:twin_alignment_1">
+#            <siteModel id="SiteModel.s:twin_alignment_1" spec="beast.evolution.sitemodel.SiteModel">
+#                <parameter estimate="false" id="mutationRate.s:twin_alignment_1" name="mutationRate" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#                <parameter estimate="false" id="gammaShape.s:twin_alignment_1" name="shape" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#                <parameter estimate="false" id="proportionInvariant.s:twin_alignment_1" lower="0.0" name="proportionInvariant" spec="beast.core.parameter.RealParameter" upper="1.0">0.0</parameter>
+#                <substModel id="hky.s:twin_alignment_1" kappa="@kappa.s:twin_alignment_1" spec="beast.evolution.substitutionmodel.HKY">
+#                    <frequencies id="estimatedFreqs.s:twin_alignment_1" spec="beast.evolution.substitutionmodel.Frequencies">
+#                        <parameter dimension="4" id="freqParameter.s:twin_alignment_1" lower="0.0" name="frequencies" spec="beast.core.parameter.RealParameter" upper="1.0">0.25</parameter>
+#                    </frequencies>
+#                </substModel>
+#            </siteModel>
+#            <branchRateModel id="StrictClock.c:twin_alignment_1" spec="beast.evolution.branchratemodel.StrictClockModel">
+#                <parameter estimate="false" id="clockRate.c:twin_alignment_1" name="clock.rate" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            </branchRateModel>
+#        </distribution>
+#    </distribution>
+#</input>
+#
+Sample	posterior	likelihood	prior	treeLikelihood	TreeHeight	kappa	freqParameter.1	freqParameter.2	freqParameter.3	freqParameter.4	YuleModel	birthRate
+0	-9142.166013945705	-9133.679846266396	-8.48616767930919	-9133.679846266396	2.5426552873454145	2.0	0.25	0.25	0.25	0.25	-6.620807645334903	1.0
+1000	-5591.416771622379	-5586.001850924483	-5.414920697896376	-5586.001850924483	1.10748877747964	2.0	0.25	0.25	0.25	0.25	-3.549560663922089	0.8162084138160507
+2000	-5592.289905600265	-5586.357019532131	-5.93288606813436	-5586.357019532131	1.0420173497524483	2.0	0.25137884864243576	0.2523578875881331	0.24626326376943114	0.25	-4.067526034160073	2.3819696487889277
+3000	-5591.412067675206	-5584.742043452253	-6.67002422295309	-5584.742043452253	1.1051917830225184	1.967148894775322	0.2539013889436119	0.2523578875881331	0.24626326376943114	0.24747745969882387	-4.817885829813283	2.5334949474995256
