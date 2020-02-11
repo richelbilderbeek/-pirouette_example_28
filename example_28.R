@@ -1,7 +1,7 @@
 # pirouette example 28:
 # multiple DD trees for pirouette article
 suppressMessages(library(ggplot2))
-library(pirouette)
+suppressMessages(library(pirouette))
 library(babette)
 
 is_testing <- FALSE
@@ -52,7 +52,7 @@ for (i in seq_len(n_phylogenies)) {
   alignment_params <- create_alignment_params(
     sim_tral_fun = get_sim_tral_with_std_nsm_fun(
       mutation_rate = 1.0 / crown_age,
-      site_model = beautier::create_jc69_site_model()
+      site_model = create_jc69_site_model()
     ),
     root_sequence = create_blocked_dna(length = 1000),
     rng_seed = rng_seed,
@@ -68,16 +68,19 @@ for (i in seq_len(n_phylogenies)) {
   generative_experiment$inference_model$mcmc$screenlog$filename <- paste0("true_alignment_gen_", i ,".csv")
   generative_experiment$errors_filename <- paste0("true_errors_gen_", i ,".csv")
 
-  # Only pure-birth and birth-death models
-  nee_tree_priors <- list()
-  nee_tree_priors[[1]] <- create_yule_tree_prior()
-  nee_tree_priors[[2]] <- create_bd_tree_prior()
-  strict_clock_models <- list()
-  strict_clock_models[[1]] <- create_strict_clock_model()
-
+  # Use 2 different site models, 1 clock model and 2 tree priors
+  site_models <- list()
+  site_models[[1]] <- create_jc69_site_model()
+  site_models[[2]] <- create_hky_site_model()
+  clock_models <- list()
+  clock_models[[1]] <- create_strict_clock_model()
+  tree_priors <- list()
+  tree_priors[[1]] <- create_yule_tree_prior()
+  tree_priors[[2]] <- create_bd_tree_prior()
   candidate_experiments <- create_all_experiments(
-    clock_models = strict_clock_models,
-    tree_priors = nee_tree_priors,
+    site_models = site_models,
+    clock_models = clock_models,
+    tree_priors = tree_priors,
     exclude_model = generative_experiment$inference_model
   )
 
@@ -131,7 +134,7 @@ for (i in seq_len(n_phylogenies)) {
   )
 
   error_measure_params <- pirouette::create_error_measure_params(
-    error_fun = pirouette::get_gamma_error_fun()
+    error_fun = pirouette::get_nltt_error_fun()
   )
 
   pir_params <- create_pir_params(
@@ -169,15 +172,13 @@ utils::write.csv(
 pir_plots(pir_outs) +
   ggsave(file.path(example_folder, "errors.png"))
 
-if (1 == 2) {
-  pir_to_pics(
-    phylogeny = phylogeny,
-    pir_params = pir_params,
-    folder = example_folder
-  )
+pir_to_pics(
+  phylogeny = phylogeny,
+  pir_params = pir_params,
+  folder = example_folder
+)
 
-  pir_to_tables(
-    pir_params = pir_params,
-    folder = example_folder
-  )
-}
+pir_to_tables(
+  pir_params = pir_params,
+  folder = example_folder
+)
