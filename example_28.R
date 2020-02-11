@@ -172,13 +172,3 @@ utils::write.csv(
 pir_plots(pir_outs) +
   ggsave(file.path(example_folder, "errors.png"))
 
-pir_to_pics(
-  phylogeny = phylogeny,
-  pir_params = pir_params,
-  folder = example_folder
-)
-
-pir_to_tables(
-  pir_params = pir_params,
-  folder = example_folder
-)
