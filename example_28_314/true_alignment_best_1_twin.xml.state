@@ -1,22 +1,24 @@
 <itsabeastystatewerein version='2.0' sample='10000000'>
-<statenode id='Tree.t:twin_alignment_1'>((((0:0.3752428903652429,(5:0.33839562448655036,9:0.33839562448655036)29:0.036847265878692526)30:0.16622615803373214,1:0.541469048398975)31:0.018257469252800473,17:0.5597265176517755)20:0.30489797232026794,((((2:0.1591128840171306,(13:0.1400443785648159,14:0.1400443785648159)28:0.0190685054523147)19:0.007583241407750518,10:0.16669612542488113)33:0.06571907978641833,(3:0.22367308493302257,((4:0.12195081616503464,7:0.12195081616503464)25:0.006878293724849743,((6:0.10243999204303712,8:0.10243999204303712)27:0.01087263139610016,16:0.11331262343913728)21:0.015516486450747102)18:0.09484397504313818)23:0.008742120278276894)24:0.019707736222441513,((11:0.05864200581868586,12:0.05864200581868586)26:0.005751724784827474,15:0.06439373060351333)22:0.18772921083022764)32:0.6125015485383025)34:0.0</statenode>
-<statenode id='kappa1.s:twin_alignment_1'>kappa1.s:twin_alignment_1[1 1] (0.0,Infinity): 1.0321842261919516 </statenode>
-<statenode id='kappa2.s:twin_alignment_1'>kappa2.s:twin_alignment_1[1 1] (0.0,Infinity): 1.0424294773352107 </statenode>
-<statenode id='freqParameter.s:twin_alignment_1'>freqParameter.s:twin_alignment_1[4 1] (0.0,1.0): 0.24998379142651878 0.252430604986903 0.24876071279586873 0.24882489079070944 </statenode>
-<statenode id='birthRate.t:twin_alignment_1'>birthRate.t:twin_alignment_1[1 1] (-Infinity,Infinity): 3.971500496828655 </statenode>
+<statenode id='Tree.t:twin_alignment_1'>((0:0.6630588980798909,(1:0.20145007948084256,4:0.20145007948084256)6:0.46160881859904834)7:0.23036076230434788,((2:0.05729411732625335,5:0.05729411732625335)8:0.09332561905080734,3:0.1506197363770607)9:0.7427999240071781)10:0.0</statenode>
+<statenode id='ucldStdev.c:twin_alignment_1'>ucldStdev.c:twin_alignment_1[1 1] (0.0,Infinity): 0.020615967443937715 </statenode>
+<statenode id='rateCategories.c:twin_alignment_1'>rateCategories.c:twin_alignment_1[10 1] (0,9): 8 4 0 1 1 2 4 5 4 9 </statenode>
+<statenode id='BDBirthRate.t:twin_alignment_1'>BDBirthRate.t:twin_alignment_1[1 1] (0.0,10000.0): 1.3380099729524346 </statenode>
+<statenode id='BDDeathRate.t:twin_alignment_1'>BDDeathRate.t:twin_alignment_1[1 1] (0.0,1.0): 0.5670937903969262 </statenode>
 </itsabeastystatewerein>
 <!--
 {"operators":[
-{"id":"YuleBirthRateScaler.t:twin_alignment_1","p":0.31505760888719336,"accept":108170,"reject":289495,"acceptFC":107201,"rejectFC":289185,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelTreeScaler.t:twin_alignment_1","p":0.8378784182007553,"accept":58970,"reject":339213,"acceptFC":58911,"rejectFC":338047,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelTreeRootScaler.t:twin_alignment_1","p":0.7449940634568437,"accept":86349,"reject":313841,"acceptFC":86247,"rejectFC":312699,"rejectIv":148,"rejectOp":148},
-{"id":"YuleModelUniformOperator.t:twin_alignment_1","p":"NaN","accept":790381,"reject":3192039,"acceptFC":787908,"rejectFC":3182125,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelSubtreeSlide.t:twin_alignment_1","p":0.1312171289218527,"accept":165851,"reject":1826344,"acceptFC":165755,"rejectFC":1820309,"rejectIv":478099,"rejectOp":478099},
-{"id":"YuleModelNarrow.t:twin_alignment_1","p":"NaN","accept":277213,"reject":1714880,"acceptFC":276338,"rejectFC":1709582,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelWide.t:twin_alignment_1","p":"NaN","accept":2401,"reject":396116,"acceptFC":2387,"rejectFC":394862,"rejectIv":205431,"rejectOp":205431},
-{"id":"YuleModelWilsonBalding.t:twin_alignment_1","p":"NaN","accept":1283,"reject":397385,"acceptFC":1272,"rejectFC":396168,"rejectIv":80018,"rejectOp":80018},
-{"id":"kappa1Scaler.s:twin_alignment_1","p":0.630751705983832,"accept":2368,"reject":11025,"acceptFC":2365,"rejectFC":10982,"rejectIv":0,"rejectOp":0},
-{"id":"kappa2Scaler.s:twin_alignment_1","p":0.6254402782652754,"accept":2234,"reject":11117,"acceptFC":2224,"rejectFC":11084,"rejectIv":0,"rejectOp":0},
-{"id":"FrequenciesExchanger.s:twin_alignment_1","p":0.02968480185582232,"accept":3691,"reject":9635,"acceptFC":3669,"rejectFC":9623,"rejectIv":0,"rejectOp":0}
+{"id":"BirthRateScaler.t:twin_alignment_1","p":0.1842374268558981,"accept":72122,"reject":197600,"acceptFC":71230,"rejectFC":197481,"rejectIv":0,"rejectOp":0},
+{"id":"DeathRateScaler.t:twin_alignment_1","p":0.11146358722294736,"accept":60157,"reject":210585,"acceptFC":59390,"rejectFC":210393,"rejectIv":141284,"rejectOp":141284},
+{"id":"BirthDeathTreeScaler.t:twin_alignment_1","p":0.736795996275027,"accept":43331,"reject":227149,"acceptFC":43266,"rejectFC":226219,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathTreeRootScaler.t:twin_alignment_1","p":0.5653165585787375,"accept":43713,"reject":226814,"acceptFC":43567,"rejectFC":225971,"rejectIv":36374,"rejectOp":36374},
+{"id":"BirthDeathUniformOperator.t:twin_alignment_1","p":"NaN","accept":259319,"reject":2444754,"acceptFC":258344,"rejectFC":2435675,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathSubtreeSlide.t:twin_alignment_1","p":0.28185231221023993,"accept":149412,"reject":1199784,"acceptFC":149251,"rejectFC":1194952,"rejectIv":303027,"rejectOp":303027},
+{"id":"BirthDeathNarrow.t:twin_alignment_1","p":"NaN","accept":4052,"reject":1347903,"acceptFC":4047,"rejectFC":1343065,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathWide.t:twin_alignment_1","p":"NaN","accept":126,"reject":270166,"acceptFC":126,"rejectFC":269107,"rejectIv":150282,"rejectOp":150282},
+{"id":"BirthDeathWilsonBalding.t:twin_alignment_1","p":"NaN","accept":18,"reject":270662,"acceptFC":18,"rejectFC":269655,"rejectIv":133302,"rejectOp":133302},
+{"id":"ucldStdevScaler.c:twin_alignment_1","p":0.17818231233203907,"accept":79225,"reject":190815,"acceptFC":78592,"rejectFC":190395,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesRandomWalk.c:twin_alignment_1","p":"NaN","accept":504897,"reject":396617,"acceptFC":503031,"rejectFC":395086,"rejectIv":358913,"rejectOp":358913},
+{"id":"CategoriesSwapOperator.c:twin_alignment_1","p":"NaN","accept":711604,"reject":189432,"acceptFC":709012,"rejectFC":188545,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesUniform.c:twin_alignment_1","p":"NaN","accept":746240,"reject":153504,"acceptFC":743613,"rejectFC":152843,"rejectIv":0,"rejectOp":0}
 ]}
 -->

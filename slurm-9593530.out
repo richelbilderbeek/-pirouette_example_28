@@ -1,0 +1,52 @@
+[1] "1 / 5"
+[1] "2 / 5"
+[1] "3 / 5"
+[1] "4 / 5"
+[1] "5 / 5"
+[1] "1 / 5"
+Registered S3 method overwritten by 'pryr':
+  method      from
+  print.bytes Rcpp
+[1] "2 / 5"
+[1] "3 / 5"
+[1] "4 / 5"
+[1] "5 / 5"
+slurmstepd: error: *** JOB 9593530 ON pg-node006 CANCELLED AT 2020-02-17T12:13:07 DUE TO TIME LIMIT ***
+
+
+###############################################################################
+Peregrine Cluster
+Job 9593530 for user 'p230198'
+Finished at: Mon Feb 17 12:13:09 CET 2020
+
+Job details:
+============
+
+Name                : rerun.sh
+User                : p230198
+Partition           : regular
+Nodes               : pg-node006
+Cores               : 1
+State               : CANCELLED,TIMEOUT
+Submit              : 2020-02-17T11:42:11
+Start               : 2020-02-17T11:42:38
+End                 : 2020-02-17T12:13:08
+Reserved walltime   : 00:30:00
+Used walltime       : 00:30:30
+Used CPU time       : 00:28:56 (efficiency: 94.86%)
+% User (Computation): 97.46%
+% System (I/O)      :  2.54%
+Mem reserved        : 2000M/core
+Max Mem used        : 913.37M (pg-node006)
+Max Disk Write      : 0.00  (pg-node006)
+Max Disk Read       : 51.20K (pg-node006)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/additional_information/scientific_output
+
+################################################################################

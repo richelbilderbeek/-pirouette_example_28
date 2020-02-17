@@ -1,16 +1,16 @@
 <itsabeastystatewerein version='2.0' sample='10000000'>
-<statenode id='Tree.t:true_alignment_1'>((((((0:0.5485448131011533,5:0.5485448131011533)33:0.0067712960273530465,9:0.5553161091285064)29:0.3000859160980761,(1:0.6268553922492546,17:0.6268553922492546)20:0.2285466329773279)22:0.05835933823298667,(11:0.1959189927616684,12:0.1959189927616684)21:0.7178423706979007)26:0.03678926836536256,(((((2:0.19221376638927237,(13:0.04848577098784152,14:0.04848577098784152)23:0.14372799540143086)32:0.1048507441215368,10:0.2970645105108092)19:0.36063664564805475,3:0.6577011561588639)28:0.18255268138126257,((6:0.424141385481835,8:0.424141385481835)27:0.051587292446475475,16:0.4757286779283105)25:0.36452515961181603)31:0.08978277690862058,(4:0.7523118237695333,7:0.7523118237695333)18:0.17772479067921376)24:0.020514017376184635)30:0.027278877821671488,15:0.9778295096466032)34:0.0</statenode>
-<statenode id='birthRate.t:true_alignment_1'>birthRate.t:true_alignment_1[1 1] (-Infinity,Infinity): 1.1944397517387944 </statenode>
+<statenode id='Tree.t:true_alignment_1'>(((0:0.8610570135200083,(1:0.20637809434545312,4:0.20637809434545312)6:0.6546789191745552)8:0.1372255914726367,3:0.998282604992645)9:0.027845877092726568,(2:0.3894685405160676,5:0.3894685405160676)7:0.6366599415693039)10:0.0</statenode>
+<statenode id='birthRate.t:true_alignment_1'>birthRate.t:true_alignment_1[1 1] (-Infinity,Infinity): 0.8971731158183421 </statenode>
 </itsabeastystatewerein>
 <!--
 {"operators":[
-{"id":"YuleBirthRateScaler.t:true_alignment_1","p":0.31932452649224197,"accept":110870,"reject":288662,"acceptFC":109920,"rejectFC":288361,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelTreeScaler.t:true_alignment_1","p":0.8607418852896328,"accept":60131,"reject":339298,"acceptFC":60087,"rejectFC":338084,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelTreeRootScaler.t:true_alignment_1","p":0.7557311424908613,"accept":33934,"reject":366891,"acceptFC":33892,"rejectFC":365628,"rejectIv":151538,"rejectOp":151538},
-{"id":"YuleModelUniformOperator.t:true_alignment_1","p":"NaN","accept":1050568,"reject":2950722,"acceptFC":1047119,"rejectFC":2941390,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelSubtreeSlide.t:true_alignment_1","p":0.244267290120388,"accept":242561,"reject":1755717,"acceptFC":242349,"rejectFC":1749743,"rejectIv":395348,"rejectOp":395348},
-{"id":"YuleModelNarrow.t:true_alignment_1","p":"NaN","accept":455709,"reject":1544552,"acceptFC":454234,"rejectFC":1539709,"rejectIv":0,"rejectOp":0},
-{"id":"YuleModelWide.t:true_alignment_1","p":"NaN","accept":4834,"reject":394861,"acceptFC":4826,"rejectFC":393571,"rejectIv":206033,"rejectOp":206033},
-{"id":"YuleModelWilsonBalding.t:true_alignment_1","p":"NaN","accept":6542,"reject":394149,"acceptFC":6520,"rejectFC":392939,"rejectIv":79250,"rejectOp":79250}
+{"id":"YuleBirthRateScaler.t:true_alignment_1","p":0.20118645065710142,"accept":110425,"reject":289784,"acceptFC":109319,"rejectFC":289598,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeScaler.t:true_alignment_1","p":0.7679153020952142,"accept":68602,"reject":330226,"acceptFC":68520,"rejectFC":329092,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeRootScaler.t:true_alignment_1","p":0.6543395006184162,"accept":51563,"reject":348879,"acceptFC":51472,"rejectFC":347739,"rejectIv":128704,"rejectOp":128704},
+{"id":"YuleModelUniformOperator.t:true_alignment_1","p":"NaN","accept":953951,"reject":3045630,"acceptFC":950831,"rejectFC":3035833,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelSubtreeSlide.t:true_alignment_1","p":0.3297565542036075,"accept":266309,"reject":1736124,"acceptFC":265999,"rejectFC":1730173,"rejectIv":349656,"rejectOp":349656},
+{"id":"YuleModelNarrow.t:true_alignment_1","p":"NaN","accept":673072,"reject":1324621,"acceptFC":670990,"rejectFC":1320303,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelWide.t:true_alignment_1","p":"NaN","accept":23444,"reject":377005,"acceptFC":23374,"rejectFC":375792,"rejectIv":222482,"rejectOp":222482},
+{"id":"YuleModelWilsonBalding.t:true_alignment_1","p":"NaN","accept":9689,"reject":390677,"acceptFC":9655,"rejectFC":389429,"rejectIv":199210,"rejectOp":199210}
 ]}
 -->

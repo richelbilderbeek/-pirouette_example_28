@@ -1,0 +1,56 @@
+[1] "1 / 5"
+[1] "2 / 5"
+[1] "3 / 5"
+[1] "4 / 5"
+[1] "5 / 5"
+[1] "1 / 5"
+Registered S3 method overwritten by 'pryr':
+  method      from
+  print.bytes Rcpp
+[1] "2 / 5"
+[1] "3 / 5"
+[1] "4 / 5"
+[1] "5 / 5"
+Saving 7 x 7 in image
+
+real	213m46.794s
+user	202m8.770s
+sys	4m58.624s
+
+
+###############################################################################
+Peregrine Cluster
+Job 9594109 for user 'p230198'
+Finished at: Mon Feb 17 15:53:31 CET 2020
+
+Job details:
+============
+
+Name                : pirouette_example_28
+User                : p230198
+Partition           : regular
+Nodes               : pg-node006
+Cores               : 1
+State               : COMPLETED
+Submit              : 2020-02-17T12:19:07
+Start               : 2020-02-17T12:19:39
+End                 : 2020-02-17T15:53:28
+Reserved walltime   : 1-00:00:00
+Used walltime       :   03:33:49
+Used CPU time       :   03:27:09 (efficiency: 96.88%)
+% User (Computation): 97.59%
+% System (I/O)      :  2.41%
+Mem reserved        : 10G/node
+Max Mem used        : 1.00G (pg-node006)
+Max Disk Write      : 71.68K (pg-node006)
+Max Disk Read       : 1.35M (pg-node006)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/additional_information/scientific_output
+
+################################################################################

@@ -1,0 +1,18 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:twin_alignment_4'>(((((0:0.11519246320669128,2:0.11519246320669128)9:0.024479808566432518,1:0.1396722717731238)10:0.05893474185865924,5:0.19860701363178304)11:0.4211555548713444,4:0.6197625685031274)7:0.20855836020633445,(3:0.06386248060270161,6:0.06386248060270161)8:0.7644584481067602)12:0.0</statenode>
+<statenode id='BDBirthRate.t:twin_alignment_4'>BDBirthRate.t:twin_alignment_4[1 1] (0.0,10000.0): 2.581685443877489 </statenode>
+<statenode id='BDDeathRate.t:twin_alignment_4'>BDDeathRate.t:twin_alignment_4[1 1] (0.0,1.0): 0.3263248809541343 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"BirthRateScaler.t:twin_alignment_4","p":0.20565353212846463,"accept":109528,"reject":274319,"acceptFC":108623,"rejectFC":274138,"rejectIv":0,"rejectOp":0},
+{"id":"DeathRateScaler.t:twin_alignment_4","p":0.1514289199778535,"accept":104448,"reject":280611,"acceptFC":103496,"rejectFC":280461,"rejectIv":176011,"rejectOp":176011},
+{"id":"BirthDeathTreeScaler.t:twin_alignment_4","p":0.7763796313243452,"accept":71255,"reject":313657,"acceptFC":71191,"rejectFC":312615,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathTreeRootScaler.t:twin_alignment_4","p":0.6384170653447826,"accept":77145,"reject":306470,"acceptFC":77008,"rejectFC":305463,"rejectIv":30576,"rejectOp":30576},
+{"id":"BirthDeathUniformOperator.t:twin_alignment_4","p":"NaN","accept":472378,"reject":3373759,"acceptFC":470991,"rejectFC":3364001,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathSubtreeSlide.t:twin_alignment_4","p":0.1589278849025745,"accept":257470,"reject":1667287,"acceptFC":257342,"rejectFC":1661852,"rejectIv":390498,"rejectOp":390498},
+{"id":"BirthDeathNarrow.t:twin_alignment_4","p":"NaN","accept":9507,"reject":1913214,"acceptFC":9484,"rejectFC":1907602,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathWide.t:twin_alignment_4","p":"NaN","accept":234,"reject":383642,"acceptFC":232,"rejectFC":382472,"rejectIv":210164,"rejectOp":210164},
+{"id":"BirthDeathWilsonBalding.t:twin_alignment_4","p":"NaN","accept":78,"reject":384999,"acceptFC":76,"rejectFC":383923,"rejectIv":172028,"rejectOp":172028}
+]}
+-->
