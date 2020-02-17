@@ -4,11 +4,19 @@ Loading required package: babette
 Loading required package: beastier
 Loading required package: mauricer
 Loading required package: tracerer
-[1] "1 / 1"
-[1] "1 / 1"
+[1] "1 / 5"
+[1] "2 / 5"
+[1] "3 / 5"
+[1] "4 / 5"
+[1] "5 / 5"
+[1] "1 / 5"
 Registered S3 method overwritten by 'pryr':
   method      from
   print.bytes Rcpp
+[1] "2 / 5"
+[1] "3 / 5"
+[1] "4 / 5"
+[1] "5 / 5"
 Registered S3 method overwritten by 'geiger':
   method            from
   unique.multiPhylo ape 
@@ -17,8 +25,8 @@ Saving 7 x 7 in image
 
 ###############################################################################
 Peregrine Cluster
-Job 9466526 for user 'p230198'
-Finished at: Thu Feb  6 15:01:10 CET 2020
+Job 9467464 for user 'p230198'
+Finished at: Thu Feb  6 17:19:43 CET 2020
 
 Job details:
 ============
@@ -26,21 +34,21 @@ Job details:
 Name                : run_r_script
 User                : p230198
 Partition           : regular
-Nodes               : pg-node022
+Nodes               : pg-node015
 Cores               : 1
 State               : COMPLETED
-Submit              : 2020-02-06T12:22:47
-Start               : 2020-02-06T12:22:55
-End                 : 2020-02-06T15:01:10
+Submit              : 2020-02-06T15:48:35
+Start               : 2020-02-06T15:48:58
+End                 : 2020-02-06T17:19:43
 Reserved walltime   : 10-00:00:00
-Used walltime       :    02:38:15
-Used CPU time       :    02:36:14 (efficiency: 98.73%)
-% User (Computation): 99.43%
-% System (I/O)      :  0.56%
+Used walltime       :    01:30:45
+Used CPU time       :    01:26:38 (efficiency: 95.46%)
+% User (Computation): 99.19%
+% System (I/O)      :  0.81%
 Mem reserved        : 10G/node
-Max Mem used        : 1.08G (pg-node022)
-Max Disk Write      : 71.68K (pg-node022)
-Max Disk Read       : 1.59M (pg-node022)
+Max Mem used        : 1.01G (pg-node015)
+Max Disk Write      : 71.68K (pg-node015)
+Max Disk Read       : 1.59M (pg-node015)
 
 
 Acknowledgements:
