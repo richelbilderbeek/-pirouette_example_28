@@ -30,14 +30,25 @@ phylogenies <- list()
 crown_age <- 10
 for (i in seq_len(n_phylogenies)) {
   print(paste(i, "/", n_phylogenies))
-  speciation_rate <- 0.8 # lambda
-  extinction_rate <- 0.1 # mu
-  carrying_capacity <- 20 # clade-level
+  # Use same parameters as create_dd_tree
+  extinction_rate <- 0.1
+  n_taxa <- 6
+  n_0 <- 2 # Initial number of species at stem/crown of tree
+  diff <- (log(n_taxa) - log(n_0)) / crown_age
+  speciation_rate <- 3.0 * (diff + extinction_rate)
+  carrying_capacity <- n_taxa # clade-level
   dd_parameters <- c(speciation_rate, extinction_rate, carrying_capacity)
   ddmodel <- 1 # linear dependence in speciation rate with parameter K
   set.seed(i)
   dd_sim_result <- DDD::dd_sim(pars = dd_parameters, age  = crown_age, ddmodel = ddmodel)
   phylogeny <- dd_sim_result$tes # Only extant species
+
+  # Save tree to files
+  ape::write.tree(phylogeny, file = file.path(example_folder, "true_tree.newick"))
+  png(filename = file.path(example_folder, "true_tree.png"), width = 7, height = 7)
+  ape::plot.phylo(phylogeny)
+  dev.off()
+
   phylogenies[[i]] <- phylogeny
 }
 
@@ -68,22 +79,10 @@ for (i in seq_len(n_phylogenies)) {
   generative_experiment$inference_model$mcmc$screenlog$filename <- paste0("true_alignment_gen_", i ,".csv")
   generative_experiment$errors_filename <- paste0("true_errors_gen_", i ,".csv")
 
-  # Use 2 different site models, 1 clock model and 2 tree priors
-  site_models <- list()
-  site_models[[1]] <- create_jc69_site_model()
-  site_models[[2]] <- create_hky_site_model()
-  clock_models <- list()
-  clock_models[[1]] <- create_strict_clock_model()
-  tree_priors <- list()
-  tree_priors[[1]] <- create_yule_tree_prior()
-  tree_priors[[2]] <- create_bd_tree_prior()
-  candidate_experiments <- create_all_experiments(
-    site_models = site_models,
-    clock_models = clock_models,
-    tree_priors = tree_priors,
+  # Create the set of candidate birth-death experiments
+  candidate_experiments <- create_all_bd_experiments(
     exclude_model = generative_experiment$inference_model
   )
-
   for (j in seq_along(candidate_experiments)) {
     candidate_experiments[[j]]$beast2_options$input_filename <- paste0("true_alignment_best_", i ,".xml")
     candidate_experiments[[j]]$beast2_options$output_state_filename <- paste0("true_alignment_best_", i ,".xml.state")
