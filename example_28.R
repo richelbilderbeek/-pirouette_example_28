@@ -45,9 +45,9 @@ for (i in seq_len(n_phylogenies)) {
 
   # Save tree to files
   ape::write.tree(phylogeny, file = file.path(example_folder, "true_tree.newick"))
-  png(filename = file.path(example_folder, "true_tree.png"), width = 7, height = 7)
-  ape::plot.phylo(phylogeny)
-  dev.off()
+  #png(filename = file.path(example_folder, "true_tree.png"), width = 7, height = 7)
+  #ape::plot.phylo(phylogeny)
+  #dev.off()
 
   phylogenies[[i]] <- phylogeny
 }
