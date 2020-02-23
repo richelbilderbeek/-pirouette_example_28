@@ -22,6 +22,10 @@ set.seed(rng_seed)
 testit::assert(is_beast2_installed())
 
 n_phylogenies <- 5
+if (is_on_travis()) {
+  n_phylogenies <- 2
+}
+
 phylogenies <- list()
 
 ################################################################################
