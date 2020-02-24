@@ -10,13 +10,13 @@ if (is_on_travis()) {
 }
 
 if (1 == 2) {
-  setwd("~/GitHubs/pirouette_example_28")
+  setwd("/home/richel/GitHubs/pirouette_example_28")
 }
 root_folder <- getwd()
 example_no <- 28
 rng_seed <- 314
 example_folder <- file.path(root_folder, paste0("example_", example_no, "_", rng_seed))
-dir.create(example_folder, showWarnings = FALSE, recursive = TRUE)
+# dir.create(example_folder, showWarnings = FALSE, recursive = TRUE)
 setwd(example_folder)
 set.seed(rng_seed)
 testit::assert(is_beast2_installed())
