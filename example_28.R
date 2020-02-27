@@ -15,11 +15,6 @@ suppressMessages(library(dplyr))
 suppressMessages(library(babette))
 testthat::expect_true(mcbette::can_run_mcbette())
 
-is_testing <- FALSE
-if (is_on_travis()) {
-  is_testing <- TRUE
-}
-
 if (1 == 2) {
   setwd("/home/richel/GitHubs/pirouette_example_28")
 }
@@ -27,8 +22,16 @@ root_folder <- getwd()
 example_no <- 28
 rng_seed <- 314
 crown_age <- 10
+n_phylogenies <- 5
+is_testing <- is_on_travis()
 
-#' Simulates a DD tree
+if (is_testing) {
+  n_phylogenies <- 2
+}
+
+################################################################################
+# Simulate a DD tree
+################################################################################
 sim_dd_tree_fun <- function(crown_age) {
   extinction_rate <- 0.1
   n_taxa <- 6
@@ -47,21 +50,16 @@ sim_tree_fun <- pryr::partial(
   crown_age = crown_age
 )
 
-n_phylogenies <- 5
-if (is_on_travis()) {
-  n_phylogenies <- 2
-}
-
 # Create phylogenies
 phylogenies <- list()
 for (i in seq_len(n_phylogenies)) {
-  set.seed(i)
+  set.seed(314 - 1 + i)
   phylogenies[[i]] <- sim_tree_fun()
 }
 
 # Create piriouette parameter sets
 pir_paramses <- list()
-for (i in seq_len(n_phylogenies)) {
+for (i in seq_along(phylogenies)) {
 
   print(paste(i, "/", n_phylogenies))
 
@@ -82,16 +80,10 @@ for (i in seq_len(n_phylogenies)) {
   # Combine all experiments
   experiments <- c(list(generative_experiment), candidate_experiments)
 
-  # Shorter on Travis
-  if (is_on_travis()) {
-    experiments <- shorten_experiments(experiments)
-  }
-
   twinning_params <- create_twinning_params(
     sim_twin_tree_fun = get_sim_bd_twin_tree_fun(),
     sim_twal_fun = get_sim_twal_same_n_muts_fun(
-      mutation_rate = 1.0 / crown_age,
-      max_n_tries = 1000
+      mutation_rate = 1.0 / crown_age
     ),
     twin_evidence_filename = get_temp_evidence_filename()
   )
@@ -106,8 +98,17 @@ for (i in seq_len(n_phylogenies)) {
   pir_paramses[[i]] <- pir_params
 }
 
+# Shorter on Travis
+if (is_testing) {
+  for (i in seq_along(pir_paramses)) {
+    pir_paramses[[i]]$experiments <- shorten_experiments(
+      pir_paramses[[i]]$experiments
+    )
+  }
+}
+
 # Set the RNG seeds
-pir_paramses[[i]] <- renum_rng_seeds(
+pir_paramses <- renum_rng_seeds(
   pir_paramses = pir_paramses,
   rng_seeds = seq(314, 314 - 1 + length(pir_paramses))
 )
@@ -121,9 +122,19 @@ for (i in seq_along(pir_paramses)) {
   )
 }
 
+# Save tree to files
+for (i in seq_along(pir_paramses)) {
+  testthat::expect_equal(length(pir_paramses), length(phylogenies))
+  rng_seed <- pir_paramses[[i]]$alignment_params$rng_seed
+  folder_name <- file.path(root_folder, paste0("example_", example_no, "_", rng_seed))
 
-  # Save tree to files
-  ape::write.tree(phylogeny, file = file.path(example_folder, "true_tree.newick"))
+  # Create folder, do not warn if it already exists
+  dir.create(folder_name, showWarnings = FALSE, recursive = TRUE)
+  ape::write.tree(
+    phylogenies[[i]],
+    file = file.path(folder_name, "true_tree.newick")
+  )
+}
 
 ################################################################################
 # Delete previous files
@@ -141,12 +152,23 @@ pir_outs <- pir_runs(
   pir_paramses = pir_paramses
 )
 
-utils::write.csv(
-  x = pir_outs,
-  file = file.path(example_folder, "errors.csv"),
-  row.names = FALSE
-)
+################################################################################
+# Save
+################################################################################
+for (i in seq_along(pir_outs)) {
+  testthat::expect_equal(length(pir_paramses), length(pir_outs))
+  rng_seed <- pir_paramses[[i]]$alignment_params$rng_seed
+  folder_name <- file.path(root_folder, paste0("example_", example_no, "_", rng_seed))
 
-pir_plots(pir_outs) +
-  ggsave(file.path(example_folder, "errors.png"))
+  utils::write.csv(
+    x = pir_outs,
+    file = file.path(example_folder, "errors.csv"),
+    row.names = FALSE
+  )
+
+  pir_plots(pir_outs) +
+    ggsave(file.path(example_folder, "errors.png"))
+
+
+}
 
