@@ -12,15 +12,14 @@
 suppressMessages(library(ggplot2))
 suppressMessages(library(pirouette))
 suppressMessages(library(dplyr))
+suppressMessages(library(pryr))
 suppressMessages(library(babette))
+library(testthat)
 testthat::expect_true(mcbette::can_run_mcbette())
 
 ################################################################################
 # Constants
 ################################################################################
-if (1 == 2) {
-  setwd("/home/richel/GitHubs/pirouette_example_28")
-}
 root_folder <- getwd()
 example_no <- 28
 rng_seed <- 314
@@ -30,6 +29,7 @@ is_testing <- is_on_travis()
 
 if (is_testing) {
   n_phylogenies <- 2
+  root_folder <- tempdir()
 }
 
 ################################################################################
@@ -61,7 +61,7 @@ for (i in seq_len(n_phylogenies)) {
   set.seed(314 - 1 + i)
   phylogenies[[i]] <- sim_tree_fun()
 }
-expect_equal(length(phylogenies), n_p
+expect_equal(length(phylogenies), n_phylogenies)
 ################################################################################
 # Create pirouette parameter sets
 ################################################################################
@@ -102,7 +102,7 @@ for (i in seq_along(phylogenies)) {
 
   pir_paramses[[i]] <- pir_params
 }
-
+expect_equal(length(pir_paramses), n_phylogenies)
 ################################################################################
 # Shorter run on Travis
 ################################################################################
