@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.4">
+
+
+    <data
+id="alignment_evidence"
+name="alignment">
+                    <sequence id="seq_t2" taxon="t2" totalcount="4" value="aaacaagctaaagactaaaaagtatcagactagtaggagaaaaagcctataaacacgtcaaatcacaatgaacaacccattatgtattcatatagaaacaccgtaattatataccgtagtaacgagagcaacagacagttattggtactatcacaagagggaatgcagctttaattacttggcacagcaactttaaaggccaagggtaagtcataaggagtaaggctacacgaccaaagtagagaaatagcccgactgtacacgactactcccgcacaggcccgaaatcgctgcatcggcagagctctccccgccccacctctgttcgaagcccgctgctggcgaccgcccccaacgctcccccctatccaccttcaccccgtagtaccccaattgcctaattctcgtacgttctctgcttatcccacccgcacacccctcccaggacaaacggcgacgtaagtcccaaaccattgccccgctcattctttaccttccaattctaatgtagtgttcctctgcggcggtacaggttcaggtgggtcctggaggttctggaaggggctggggagtgatggccgattcattacggcagggggtggcggcagggcggagagtgggacgccagtgggcgcgggaagggagagagggaaggaggttgggggggagggagggtcttgctggacgtagtgtgatacggagcgttacggggtacgggaccagacaaagtgaaggcgtggagtggacgtccaacttgtcagtcttggaaggtggctcgacatctttgggatttttgcaaccgtggctcgtattaccaatgtcaatttactttttttttgtattcttatttcaagccgtgtgctttagtaatttcttttaagtgtttcgtatcaattggtgtggtactattgtccgtgctttctcagcgatgttttttgtgttttctgtgttcctttgagaaatgtttgcggtacttcccggcttgttatccattcatctt"/>
+                    <sequence id="seq_t3" taxon="t3" totalcount="4" value="tccgacaaaccaatataaagagtggataattgctcgcctaagaattagagcaatatgtttaagtaacaaaaataaccagtttgtaagaaatcacagtaaatccaataggagacggaccaagaaccaaaaagaacacatcaatagagctaagaccaagcagggtataaccgtggataatataagccattacaacagaaaaaaattcaaagtagcagtaaaaaagcccccgggttaaatcacgggcacgtaaagaggcgcactatcacccgtctacccactaccgtaaaccctagactcgtcggctgagccgacgaccgtccatccccccccttgtccaccttcatcctctcttaaaacgtagctgcctacatcctccctgctaaatatacagtcaccccctcccctcacacgcctgctgcccacatctgggtcattctgcccctgcttcccccctcccgccccccggaaccgtaactccgttcttcgccacggcccgccttccgtggagacggaaaggcggtgggattacgattaggctcacgggacgggggtgctaaacgttttctcggaaacctcgggggccgcgcctcggacactactggtttaacgtactgttggggcggggggcgcaccgggttgcagtacggccaggcgtttctgagcggaggagggagcgggggccttgctacgcttggtcgagatgcacagtccggggcttggaatcgcctggaggctcgtttagggcactaggtttagaagatcgtattttcggccggcttcgacgaggtactgctattctattaaagaacggtcccataactttgaagcagttgacattatcagggtccgtgtttctctgtagtgtctttggactacaaacttaatacttaccctcaatatctgttatactatggtcataggtgtttatggacagcacactcactaaagtatattctgctttatgtcctgatttatcgtgagtttttaacagaagtatttc"/>
+                    <sequence id="seq_t4" taxon="t4" totalcount="4" value="atagtgtaaaacgagaactaaaatggacaaacaatctaacccaaaattgctggacgagctgacaaactctaacttaacgcaggaattatgactctggaccttagtataaaaaaaacgtgtgcgcgaagaataagactaacgaacacgatatattaacgaagaattagagagttgagaacgtcaaccccgtcgacgtgatcgatcatgcagtgaaagaatccaactcaaaatacgaagaatattcaataagtccctctagtaacgcccccaccgacccgccctcacaccctcccccgcctcgaactcccagccctcctactataccccctgcccagcccgtgccaatcaccatcgcctccccaaagggactgctccgagccctgacgcttcgaaccacccccctaccctcccgcccccagccctcctccccctctctaccaacccgctctacccgtgtccacggagccacgcttcagcggtatccgacccagactctcgccgttaggtgggtcgggctattagagtgtccggcgtttcagccggagaaacggagatgctggctgaggtcagtgccaggggtggtttaggaggttacgtcgtggtttgcgagagaacgcccgcactcaccgggggtgggacggggcggcgcgacggagatagagtgaaccctggcctgagtttggtgaggggcggggggggtagtcgacggttgggcggcggggtcgcagggggcctctgggcgaacgagtctcgagtatttactgtttgaagtcgtatagctgattaatgtgacttttgtacatttgtttgttcaaacgttaggtcgtcttttgtgtttgtaaaccccgttggatgtgtccggttagtctaagttctaccctcagtatttcgacttgctttgttaacgcgttttttttctaaggttagctccatttctatgtttgggctgtttgtctcatggtatattccttaagtgtccaggtttgctgtttcaagttta"/>
+                    <sequence id="seq_t5" taxon="t5" totalcount="4" value="cagcactagtcgtaacacagaaacataaatggccccctaacaaaaaaagatacaaaagaataattgaacaattcaattacatcaagtagaaagataaaggtaaaaaaaatgaaactctagatgcataaagatcaaaaaacgagcgcgccttagaaagaagataagcaaacaacgtaacgatgctacgatcacaaataaacggtaaaattaatatagcaactgaaaattttggaaagaaactgatataagcttccaggcactacaccccccccgagccgtttccacagccaggccttacctagcccaacctccccactcccaaacctctgtaactgtaccctgtgccagcacaacccccctcacgtattgtattgctgtgagcctcgcattaggcaggccctccgcacaggcatggtagggccgaccgcgccgctcgcgccttctaggtccactcatgtgccaacgtcttctacccatattctacgccgcacttccacctcccgctttaaccaaggttgcggtctccggagccagcactagcaagggggtcccgtcggttcgggcaggagacccgtagatgtggcggagttgggcctaggggcactgctggaggttaacgcggaggggatccgggctgacgggtagcgggggggcctatggatccgccgcgaggggaagcgcggtgaccttgctcgaggggtcggtgtaattgcgacgcgcgcgtctcgcggtgagggagcgtggaacggtttcttggcacttcgcgtgtttaaatttttgcgtaattggttcttgacattcgcccttactctattaattgatttttgactttgtctacactcttaacttttttatcaagttttgaagctggtttattccgtattttatgttacttgttcaaacgggtttgttttctcggagctttgtcattgtagattatatagtttctctcgatgtacttctatctagattagcgttgtcattacgtgtttttgacttc"/>
+                    <sequence id="seq_t7" taxon="t7" totalcount="4" value="aaagaagctaatcactaataaatatctgccaactaggtgaaaaagcatgcagataagaaacatcacgattcataacacaatacctctaaatacggaaataccataataacgaaaatttaaacggaaaacaaaagagtgatcacatatatatcactaggggctatcgagcgctagttaattactggataaaatttaccatcaatgattgtgtcaaaagaagtagggataaacgaccaaagaaactcattagcacccctgtccgcgacaggtccggtacagacccggactccgcgtatctccagtacggacctcggcccacagctactcactccaccctcctttcggccccgaccgatgcacccccgcgtccgcattccacgcgtagtccccctatcacttaaccctgatactgtccgtgcttaaccgcccctcccccgccgccccgcaccaattgcgagagaaatcggtacccaagcccccaaacgttccatctgttcctatactagttgagttttgcgacggagcggggaaaggtctagcgggggcgagagcggctggttgggagagggaagtgatggatgataccggctgccggcggatggggccagggcggggagggggaggccggggggcggtggtagggagagcgggaaggaggtggagggggagagagtgggggagtgtaggtaatggtatagggtggatcggggggtgatgtgagaggcgaaaggtgggcattgggagggcttactcgttgtctttttaagcaagcactacgttatgattggcattattgtcactgcgatttagcaatcctatagagagttacgaatgtctagtctctatattgttagccgggtggtttagtgttgatttttgactggttaatactatctcctttgttggatgtaaatttgcttgctctgcgactttttttggatttgatgtttacctcttatataggactttggaacctttgtagttgttatctctcctcttt"/>
+                </data>
+
+
+    
+
+
+    
+
+
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="beast.gss.NS" chainLength="3000" storeEvery="1000" particleCount="1" subChainLength="5000" epsilon="100">
+    <state id="state" storeEvery="5000">
+        <tree id="Tree.t:alignment_evidence" name="stateNode">
+            <taxonset id="TaxonSet.alignment_evidence" spec="TaxonSet">
+                <alignment idref="alignment_evidence"/>
+            </taxonset>
+        </tree>
+        <parameter id="kappa1.s:alignment_evidence" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="kappa2.s:alignment_evidence" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="freqParameter.s:alignment_evidence" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+        <parameter id="ucldStdev.c:alignment_evidence" lower="0.0" name="stateNode">0.1</parameter>
+        <stateNode id="rateCategories.c:alignment_evidence" spec="parameter.IntegerParameter" dimension="8">1</stateNode>
+        <parameter id="birthRate.t:alignment_evidence" name="stateNode">1.0</parameter>
+    </state>
+
+    <init id="RandomTree.t:alignment_evidence" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:alignment_evidence" taxa="@alignment_evidence">
+        <populationModel id="ConstantPopulation0.t:alignment_evidence" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:alignment_evidence" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="YuleModel.t:alignment_evidence" spec="beast.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:alignment_evidence" tree="@Tree.t:alignment_evidence"/>
+            <prior id="YuleBirthRatePrior.t:alignment_evidence" name="distribution" x="@birthRate.t:alignment_evidence">
+                <Uniform id="Uniform.100" name="distr" upper="Infinity"/>
+            </prior>
+            <prior id="kappa1Prior.s:alignment_evidence" name="distribution" x="@kappa1.s:alignment_evidence">
+                <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                    <parameter id="RealParameter.0" estimate="false" name="M">1</parameter>
+                    <parameter id="RealParameter.1" estimate="false" lower="0" name="S" upper="Infinity">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <prior id="kappa2Prior.s:alignment_evidence" name="distribution" x="@kappa2.s:alignment_evidence">
+                <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                    <parameter id="RealParameter.2" estimate="false" name="M">1</parameter>
+                    <parameter id="RealParameter.3" estimate="false" lower="0" name="S" upper="Infinity">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <prior id="ucldStdevPrior.c:alignment_evidence" name="distribution" x="@ucldStdev.c:alignment_evidence">
+                <Gamma id="Gamma.2" name="distr">
+                    <parameter id="RealParameter.4" estimate="false" name="alpha">0.5396</parameter>
+                    <parameter id="RealParameter.5" estimate="false" name="beta">0.3819</parameter>
+                </Gamma>
+            </prior>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.alignment_evidence" spec="ThreadedTreeLikelihood" data="@alignment_evidence" tree="@Tree.t:alignment_evidence">
+                <siteModel id="SiteModel.s:alignment_evidence" spec="SiteModel">
+                    <parameter id="mutationRate.s:alignment_evidence" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="gammaShape.s:alignment_evidence" estimate="false" name="shape">1.0</parameter>
+                    <parameter id="proportionInvariant.s:alignment_evidence" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="tn93.s:alignment_evidence" spec="TN93" kappa1="@kappa1.s:alignment_evidence" kappa2="@kappa2.s:alignment_evidence">
+                        <frequencies id="estimatedFreqs.s:alignment_evidence" spec="Frequencies" frequencies="@freqParameter.s:alignment_evidence"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="RelaxedClock.c:alignment_evidence" spec="beast.evolution.branchratemodel.UCRelaxedClockModel" rateCategories="@rateCategories.c:alignment_evidence" tree="@Tree.t:alignment_evidence">
+                    <LogNormal id="LogNormalDistributionModel.c:alignment_evidence" S="@ucldStdev.c:alignment_evidence" meanInRealSpace="true" name="distr">
+                        <parameter id="RealParameter.6" estimate="false" lower="0.0" name="M" upper="1.0">1.0</parameter>
+                    </LogNormal>
+                    <parameter id="ucldMean.c:alignment_evidence" estimate="false" name="clock.rate">1.0</parameter>
+                </branchRateModel>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="YuleBirthRateScaler.t:alignment_evidence" spec="ScaleOperator" parameter="@birthRate.t:alignment_evidence" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="YuleModelTreeScaler.t:alignment_evidence" spec="ScaleOperator" scaleFactor="0.5" tree="@Tree.t:alignment_evidence" weight="3.0"/>
+
+    <operator id="YuleModelTreeRootScaler.t:alignment_evidence" spec="ScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:alignment_evidence" weight="3.0"/>
+
+    <operator id="YuleModelUniformOperator.t:alignment_evidence" spec="Uniform" tree="@Tree.t:alignment_evidence" weight="30.0"/>
+
+    <operator id="YuleModelSubtreeSlide.t:alignment_evidence" spec="SubtreeSlide" tree="@Tree.t:alignment_evidence" weight="15.0"/>
+
+    <operator id="YuleModelNarrow.t:alignment_evidence" spec="Exchange" tree="@Tree.t:alignment_evidence" weight="15.0"/>
+
+    <operator id="YuleModelWide.t:alignment_evidence" spec="Exchange" isNarrow="false" tree="@Tree.t:alignment_evidence" weight="3.0"/>
+
+    <operator id="YuleModelWilsonBalding.t:alignment_evidence" spec="WilsonBalding" tree="@Tree.t:alignment_evidence" weight="3.0"/>
+
+    <operator id="kappa1Scaler.s:alignment_evidence" spec="ScaleOperator" parameter="@kappa1.s:alignment_evidence" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="kappa2Scaler.s:alignment_evidence" spec="ScaleOperator" parameter="@kappa2.s:alignment_evidence" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="FrequenciesExchanger.s:alignment_evidence" spec="DeltaExchangeOperator" delta="0.01" weight="0.1">
+        <parameter idref="freqParameter.s:alignment_evidence"/>
+    </operator>
+
+    <operator id="ucldStdevScaler.c:alignment_evidence" spec="ScaleOperator" parameter="@ucldStdev.c:alignment_evidence" scaleFactor="0.5" weight="3.0"/>
+
+    <operator id="CategoriesRandomWalk.c:alignment_evidence" spec="IntRandomWalkOperator" parameter="@rateCategories.c:alignment_evidence" weight="10.0" windowSize="1"/>
+
+    <operator id="CategoriesSwapOperator.c:alignment_evidence" spec="SwapOperator" intparameter="@rateCategories.c:alignment_evidence" weight="10.0"/>
+
+    <operator id="CategoriesUniform.c:alignment_evidence" spec="UniformOperator" parameter="@rateCategories.c:alignment_evidence" weight="10.0"/>
+
+    <logger id="tracelog" fileName="/home/richel/GitHubs/pirouette_example_28/example_28_314/best_evidence.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.alignment_evidence"/>
+        <log id="TreeHeight.t:alignment_evidence" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:alignment_evidence"/>
+        <log idref="kappa1.s:alignment_evidence"/>
+        <log idref="kappa2.s:alignment_evidence"/>
+        <log idref="freqParameter.s:alignment_evidence"/>
+        <log idref="ucldStdev.c:alignment_evidence"/>
+        <log id="rate.c:alignment_evidence" spec="beast.evolution.branchratemodel.RateStatistic" branchratemodel="@RelaxedClock.c:alignment_evidence" tree="@Tree.t:alignment_evidence"/>
+        <log idref="YuleModel.t:alignment_evidence"/>
+        <log idref="birthRate.t:alignment_evidence"/>
+    </logger>
+
+    <logger id="screenlog" fileName="/home/richel/GitHubs/pirouette_example_28/example_28_314/best_evidence.csv" logEvery="1000">
+        <log idref="posterior"/>
+        <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:alignment_evidence" fileName="/home/richel/GitHubs/pirouette_example_28/example_28_314/best_evidence.trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:alignment_evidence" spec="beast.evolution.tree.TreeWithMetaDataLogger" branchratemodel="@RelaxedClock.c:alignment_evidence" tree="@Tree.t:alignment_evidence"/>
+    </logger>
+
+</run>
+
+</beast>
