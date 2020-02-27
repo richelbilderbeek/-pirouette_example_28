@@ -88,7 +88,8 @@ for (i in seq_along(phylogenies)) {
   twinning_params <- create_twinning_params(
     sim_twin_tree_fun = get_sim_bd_twin_tree_fun(),
     sim_twal_fun = get_sim_twal_same_n_muts_fun(
-      mutation_rate = 1.0 / crown_age
+      mutation_rate = 1.0 / crown_age,
+      max_n_tries = 10000
     ),
     twin_evidence_filename = get_temp_evidence_filename()
   )
