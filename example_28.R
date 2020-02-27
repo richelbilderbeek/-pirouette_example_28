@@ -15,6 +15,9 @@ suppressMessages(library(dplyr))
 suppressMessages(library(babette))
 testthat::expect_true(mcbette::can_run_mcbette())
 
+################################################################################
+# Constants
+################################################################################
 if (1 == 2) {
   setwd("/home/richel/GitHubs/pirouette_example_28")
 }
@@ -30,7 +33,7 @@ if (is_testing) {
 }
 
 ################################################################################
-# Simulate a DD tree
+# Create simulation function
 ################################################################################
 sim_dd_tree_fun <- function(crown_age) {
   extinction_rate <- 0.1
@@ -50,18 +53,20 @@ sim_tree_fun <- pryr::partial(
   crown_age = crown_age
 )
 
+################################################################################
 # Create phylogenies
+################################################################################
 phylogenies <- list()
 for (i in seq_len(n_phylogenies)) {
   set.seed(314 - 1 + i)
   phylogenies[[i]] <- sim_tree_fun()
 }
-
-# Create piriouette parameter sets
+expect_equal(length(phylogenies), n_p
+################################################################################
+# Create pirouette parameter sets
+################################################################################
 pir_paramses <- list()
 for (i in seq_along(phylogenies)) {
-
-  print(paste(i, "/", n_phylogenies))
 
   alignment_params <- create_alignment_params(
     sim_tral_fun = get_sim_tral_with_std_nsm_fun(
@@ -98,7 +103,9 @@ for (i in seq_along(phylogenies)) {
   pir_paramses[[i]] <- pir_params
 }
 
-# Shorter on Travis
+################################################################################
+# Shorter run on Travis
+################################################################################
 if (is_testing) {
   for (i in seq_along(pir_paramses)) {
     pir_paramses[[i]]$experiments <- shorten_experiments(
@@ -107,13 +114,17 @@ if (is_testing) {
   }
 }
 
+################################################################################
 # Set the RNG seeds
+################################################################################
 pir_paramses <- renum_rng_seeds(
   pir_paramses = pir_paramses,
   rng_seeds = seq(314, 314 - 1 + length(pir_paramses))
 )
 
+################################################################################
 # Rename filenames
+################################################################################
 for (i in seq_along(pir_paramses)) {
   rng_seed <- pir_paramses[[i]]$alignment_params$rng_seed
   pir_paramses[[i]] <- pir_rename_to_std(
@@ -122,7 +133,9 @@ for (i in seq_along(pir_paramses)) {
   )
 }
 
+################################################################################
 # Save tree to files
+################################################################################
 for (i in seq_along(pir_paramses)) {
   testthat::expect_equal(length(pir_paramses), length(phylogenies))
   rng_seed <- pir_paramses[[i]]$alignment_params$rng_seed
@@ -161,14 +174,12 @@ for (i in seq_along(pir_outs)) {
   folder_name <- file.path(root_folder, paste0("example_", example_no, "_", rng_seed))
 
   utils::write.csv(
-    x = pir_outs,
-    file = file.path(example_folder, "errors.csv"),
+    x = pir_outs[[i]],
+    file = file.path(folder_name, "errors.csv"),
     row.names = FALSE
   )
 
-  pir_plots(pir_outs) +
-    ggsave(file.path(example_folder, "errors.png"))
-
-
+  pir_plots(pir_outs[[i]]) +
+    ggsave(file.path(folder_name, "errors.png"))
 }
 
