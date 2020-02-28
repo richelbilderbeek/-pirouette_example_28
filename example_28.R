@@ -15,7 +15,6 @@ suppressMessages(library(dplyr))
 suppressMessages(library(pryr))
 suppressMessages(library(babette))
 library(testthat)
-expect_true(mcbette::can_run_mcbette())
 
 ################################################################################
 # Constants
@@ -69,13 +68,8 @@ expect_equal(length(pir_paramses), n_phylogenies)
 # Shorter run on Travis
 ################################################################################
 if (is_testing) {
-  for (i in seq_along(pir_paramses)) {
-    pir_paramses[[i]]$experiments <- shorten_experiments(
-      pir_paramses[[i]]$experiments
-    )
-  }
+  pir_paramses <- shorten_pir_params(pir_paramses)
 }
-
 ################################################################################
 # Save tree to files
 ################################################################################
