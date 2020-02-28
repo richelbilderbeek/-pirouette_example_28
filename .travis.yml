@@ -30,27 +30,13 @@ before_script:
   - Rscript -e "mauricer::install_beast2_pkg(\"NS\")"
 
 script:
-  # Go!
   - travis_wait 60 ./scripts/rerun.sh
-  # Check if all files are created
-  # Basic files: true alignment
-  - if [ ! -f example_28_314/true_alignment_1.fas ]; then echo "file 'true_alignment_1.fas' not found" ; exit 1 ; fi
-  # Basic files: true alignment, generative model
-  - if [ ! -f example_28_314/true_alignment_gen_1.xml ]; then echo "file 'true_alignment_gen_1.xml' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen_1.xml.state ]; then echo "file 'true_alignment_gen_1.xml.state' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen_1.log ]; then echo "file 'true_alignment_gen_1.log' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen_1.trees ]; then echo "file 'true_alignment_gen_1.trees' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_gen_1.csv ]; then echo "file 'true_alignment_gen_1.csv' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_errors_gen_1.csv ]; then echo "file 'true_errors_gen_1.csv' not found" ; exit 1 ; fi
-  # Basic files: true alignment, best candidate model
-  - if [ ! -f example_28_314/true_alignment_best_1.xml ]; then echo "file 'true_alignment_best_1.xml' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best_1.xml.state ]; then echo "file 'true_alignment_best_1.xml.state' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best_1.log ]; then echo "file 'true_alignment_best_1.log' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best_1.trees ]; then echo "file 'true_alignment_best_1.trees' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_alignment_best_1.csv ]; then echo "file 'true_alignment_best_1.csv' not found" ; exit 1 ; fi
-  - if [ ! -f example_28_314/true_errors_best_1.csv ]; then echo "file 'true_errors_best_1.csv' not found" ; exit 1 ; fi
-  # Final result
-  - if [ ! -f example_28_314/errors.png ]; then echo "file 'errors.png' not found" ; exit 1 ; fi
 
 after_success:
-  - cd ~/GitHubs/pirouette_article; find .
+  - Rscript -e "mcbette::mcbette_report()"
+  - find .
+
+after_failure:
+  - Rscript -e "mcbette::mcbette_report()"
+  - find .
+
