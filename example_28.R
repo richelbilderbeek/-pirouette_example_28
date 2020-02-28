@@ -9,7 +9,6 @@
 # 317  | example_28_317
 # 318  | example_28_318
 
-suppressMessages(library(ggplot2))
 suppressMessages(library(pirouette))
 suppressMessages(library(dplyr))
 suppressMessages(library(pryr))
@@ -101,6 +100,7 @@ for (i in seq_along(pir_outs)) {
   folder_name <- file.path(paste0("example_", example_no, "_", rng_seed))
   pir_save(
     phylogeny = phylogenies[[i]],
+    pir_params = pir_paramses[[i]],
     pir_out = pir_outs[[i]],
     folder_name = folder_name
   )
