@@ -8,10 +8,8 @@
 # 316  | example_28_316
 # 317  | example_28_317
 # 318  | example_28_318
-suppressMessages(library(pirouette))
-suppressMessages(library(dplyr))
-suppressMessages(library(pryr))
-suppressMessages(library(babette))
+library(pirouette)
+library(beautier)
 library(testthat)
 
 # Constants
@@ -50,23 +48,12 @@ for (i in seq_len(n_phylogenies)) {
   phylogenies[[i]] <- sim_tree_fun()
 }
 expect_equal(length(phylogenies), n_phylogenies)
+
 # Create pirouette parameter sets
 pir_paramses <- create_std_pir_paramses(n = length(phylogenies))
 expect_equal(length(pir_paramses), n_phylogenies)
 if (is_testing) {
   pir_paramses <- shorten_pir_params(pir_paramses)
-}
-# Save tree to files
-for (i in seq_along(pir_paramses)) {
-  expect_equal(length(pir_paramses), length(phylogenies))
-  rng_seed <- pir_paramses[[i]]$alignment_params$rng_seed
-  folder_name <- file.path(paste0("example_", example_no, "_", rng_seed))
-  # Create folder, do not warn if it already exists
-  dir.create(folder_name, showWarnings = FALSE, recursive = TRUE)
-  ape::write.tree(
-    phylogenies[[i]],
-    file = file.path(folder_name, "true_tree.newick")
-  )
 }
 
 # Do the runs
@@ -76,15 +63,13 @@ pir_outs <- pir_runs(
 )
 
 # Save
+expect_equal(length(pir_paramses), length(pir_outs))
+expect_equal(length(pir_paramses), length(phylogenies))
 for (i in seq_along(pir_outs)) {
-  expect_equal(length(pir_paramses), length(pir_outs))
-  rng_seed <- pir_paramses[[i]]$alignment_params$rng_seed
-  folder_name <- file.path(paste0("example_", example_no, "_", rng_seed))
   pir_save(
     phylogeny = phylogenies[[i]],
     pir_params = pir_paramses[[i]],
     pir_out = pir_outs[[i]],
-    folder_name = folder_name
+    folder_name = dirname(pir_paramses[[i]]$alignment_params$fasta_filename)
   )
 }
-
