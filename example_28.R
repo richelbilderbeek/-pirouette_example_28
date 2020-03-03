@@ -47,7 +47,7 @@ expect_equal(length(phylogenies), n_phylogenies)
 pir_paramses <- create_std_pir_paramses(n = length(phylogenies))
 expect_equal(length(pir_paramses), n_phylogenies)
 if (is_testing) {
-  pir_paramses <- shorten_pir_paramses(pir_paramses)
+    pir_paramses <- shorten_pir_paramses(pir_paramses)
 }
 
 # Do the runs
