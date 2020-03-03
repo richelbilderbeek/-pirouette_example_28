@@ -1,15 +1,9 @@
 # pirouette example 28:
 # multiple DD trees for pirouette article
 #
-# seed | folder
-# -----|---------------
-# 314  | example_28_314
-# 315  | example_28_315
-# 316  | example_28_316
-# 317  | example_28_317
-# 318  | example_28_318
 library(pirouette)
 library(beautier)
+library(beastier)
 library(testthat)
 
 # Constants
@@ -53,7 +47,7 @@ expect_equal(length(phylogenies), n_phylogenies)
 pir_paramses <- create_std_pir_paramses(n = length(phylogenies))
 expect_equal(length(pir_paramses), n_phylogenies)
 if (is_testing) {
-  pir_paramses <- shorten_pir_params(pir_paramses)
+  pir_paramses <- shorten_pir_paramses(pir_paramses)
 }
 
 # Do the runs
