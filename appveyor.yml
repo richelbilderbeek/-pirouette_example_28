@@ -42,9 +42,9 @@ test_script:
 
 after_test:
   # Delete all previous results
-  - rm -rf example_17_314
+  - rm -rf example_4_314
   # Go!
-  - Rscript example_17.R
+  - Rscript example_4.R
   # Check if all files are created
 
 on_failure:
