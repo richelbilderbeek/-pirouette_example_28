@@ -45,11 +45,7 @@ test_script:
   - travis-tool.sh run_tests
 
 after_test:
-  # Delete all previous results
-  - rm -rf example_4_314
-  # Go!
-  - Rscript example_4.R
-  # Check if all files are created
+  - Rscript example_28.R
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
