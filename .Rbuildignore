@@ -9,4 +9,6 @@
 ^example_.*\.R$
 ^example_*$
 ^slurm.*$
+^pirouette_example.*$
+
 

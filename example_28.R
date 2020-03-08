@@ -11,7 +11,7 @@ example_no <- 28
 rng_seed <- 314
 crown_age <- 10
 n_phylogenies <- 5
-is_testing <- is_on_travis()
+is_testing <- is_on_ci()
 if (is_testing) {
   n_phylogenies <- 2
 }
