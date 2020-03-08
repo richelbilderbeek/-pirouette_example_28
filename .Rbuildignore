@@ -1,0 +1,12 @@
+^codemeta\.json$
+^.*\.Rproj$
+^\.Rproj\.user$
+^pics$
+^doc$
+^scripts$
+^\.travis\.yml$
+^appveyor\.yml$
+^example_.*\.R$
+^example_*$
+^slurm.*$
+
