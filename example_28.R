@@ -11,6 +11,7 @@ example_no <- 28
 rng_seed <- 314
 crown_age <- 10
 n_phylogenies <- 5
+folder_name <- paste0("example_", example_no, "_", rng_seed)
 is_testing <- is_on_ci()
 if (is_testing) {
   n_phylogenies <- 2
@@ -44,7 +45,10 @@ for (i in seq_len(n_phylogenies)) {
 expect_equal(length(phylogenies), n_phylogenies)
 
 # Create pirouette parameter sets
-pir_paramses <- create_std_pir_paramses(n = length(phylogenies))
+pir_paramses <- create_std_pir_paramses(
+  n = length(phylogenies),
+  folder_name = folder_name
+)
 expect_equal(length(pir_paramses), n_phylogenies)
 if (is_testing) {
     pir_paramses <- shorten_pir_paramses(pir_paramses)
