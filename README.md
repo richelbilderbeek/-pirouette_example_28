@@ -10,6 +10,17 @@ that shows the pirouette plot for multiple DD trees.
 
 This figure is to be used for the pirouette article.
 
+## Running on Peregrine
+
+Install `pirouette` using the [peregrine](https://github.com/richelbilderbeek/peregrine)
+bash and R scripts.
+
+Then, in the main folder of this repo, type:
+
+```
+sbatch scripts/rerun.sh
+```
+
 ## Related settings
 
  * [One exemplary DD tree](https://github.com/richelbilderbeek/pirouette_example_30)
