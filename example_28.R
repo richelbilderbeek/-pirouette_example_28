@@ -5,13 +5,14 @@ library(pirouette)
 library(beautier)
 library(beastier)
 library(testthat)
+library(ggplot2)
 
 # Constants
 example_no <- 28
 rng_seed <- 314
 crown_age <- 10
 n_phylogenies <- 5
-folder_name <- paste0("example_", example_no, "_", rng_seed)
+folder_name <- paste0("example_", example_no)
 is_testing <- is_on_ci()
 if (is_testing) {
   n_phylogenies <- 2
@@ -60,7 +61,12 @@ pir_outs <- pir_runs(
   pir_paramses = pir_paramses
 )
 
-# Save
+# Save summary
+pir_plots(pir_outs) +
+  ggtitle(paste("Number of replicates: ", n_phylogenies)) +
+  ggsave(file.path(folder_name, "errors.png"), width = 7, height = 7)
+
+# Save individual runs
 expect_equal(length(pir_paramses), length(pir_outs))
 expect_equal(length(pir_paramses), length(phylogenies))
 for (i in seq_along(pir_outs)) {
