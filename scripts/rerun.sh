@@ -12,10 +12,10 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --mem=10G
-#SBATCH --job-name=pirouette_example_28
-#SBATCH --output=pirouette_example_28.log
+#SBATCH --job-name=pirex28
+#SBATCH --output=example_28.log
 module load R
 
-rm -rf example_28_314
+rm -rf example_28
 time Rscript example_28.R
 

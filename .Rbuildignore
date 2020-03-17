@@ -5,10 +5,9 @@
 ^doc$
 ^scripts$
 ^\.travis\.yml$
+^CONTRIBUTING\.md$
+^CODE_OF_CONDUCT\.md$
+^NEWS\.md$
 ^appveyor\.yml$
-^example_.*\.R$
-^example_*$
-^slurm.*$
-^pirouette_example.*$
-
+^example_28\.log$
 

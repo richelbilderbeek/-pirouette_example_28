@@ -25,13 +25,15 @@ sbatch scripts/rerun.sh
 
  * [One exemplary DD tree](https://github.com/richelbilderbeek/pirouette_example_30)
 
-## Run-times
-
-n_taxa|chain_length|wallclock_time (mins, ceil)|wallclock_time (hours)
-------|------------|---------------------------|----------------------------
-4     | 3k         |5                          |0.08
-40    | 10M        |158                        |2.6
-
 ## Results
 
-![](example_28_314/errors.png)
+[To add]
+
+### Indiviudual results
+
+![](example_28_314/314/errors.png)
+![](example_28_314/315/errors.png)
+![](example_28_314/316/errors.png)
+![](example_28_314/317/errors.png)
+![](example_28_314/318/errors.png)
+
