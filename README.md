@@ -27,13 +27,13 @@ sbatch scripts/rerun.sh
 
 ## Results
 
-[To add]
+![](example_28/errors.png)
 
 ### Indiviudual results
 
-![](example_28_314/314/errors.png)
-![](example_28_314/315/errors.png)
-![](example_28_314/316/errors.png)
-![](example_28_314/317/errors.png)
-![](example_28_314/318/errors.png)
+![](example_28/314/errors.png)
+![](example_28/315/errors.png)
+![](example_28/316/errors.png)
+![](example_28/317/errors.png)
+![](example_28/318/errors.png)
 
