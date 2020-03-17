@@ -12,37 +12,37 @@ Saving 7 x 7 in image
 Saving 7 x 7 in image
 Saving 7 x 7 in image
 
-real	191m12.122s
-user	177m4.143s
-sys	4m19.178s
+real	186m53.559s
+user	172m13.536s
+sys	4m23.897s
 
 
 ###############################################################################
 Peregrine Cluster
-Job 10149627 for user 'p230198'
-Finished at: Tue Mar 17 11:26:34 CET 2020
+Job 10130896 for user 'p230198'
+Finished at: Mon Mar 16 18:24:11 CET 2020
 
 Job details:
 ============
 
-Name                : pirex28
+Name                : pirouette_example_28
 User                : p230198
 Partition           : regular
-Nodes               : pg-node018
+Nodes               : pg-node013
 Cores               : 1
 State               : COMPLETED
-Submit              : 2020-03-17T08:15:19
-Start               : 2020-03-17T08:15:20
-End                 : 2020-03-17T11:26:34
+Submit              : 2020-03-16T15:17:15
+Start               : 2020-03-16T15:17:16
+End                 : 2020-03-16T18:24:10
 Reserved walltime   : 1-00:00:00
-Used walltime       :   03:11:14
-Used CPU time       :   03:01:23 (efficiency: 94.85%)
-% User (Computation): 97.62%
-% System (I/O)      :  2.38%
+Used walltime       :   03:06:54
+Used CPU time       :   02:56:38 (efficiency: 94.51%)
+% User (Computation): 97.50%
+% System (I/O)      :  2.49%
 Mem reserved        : 10G/node
-Max Mem used        : 1.00G (pg-node018)
-Max Disk Write      : 71.68K (pg-node018)
-Max Disk Read       : 1.35M (pg-node018)
+Max Mem used        : 962.30M (pg-node013)
+Max Disk Write      : 71.68K (pg-node013)
+Max Disk Read       : 1.35M (pg-node013)
 
 
 Acknowledgements:
