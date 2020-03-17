@@ -11,7 +11,7 @@ library(ggplot2)
 example_no <- 28
 rng_seed <- 314
 crown_age <- 10
-n_phylogenies <- 5
+n_phylogenies <- 10
 folder_name <- paste0("example_", example_no)
 is_testing <- is_on_ci()
 if (is_testing) {
