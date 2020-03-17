@@ -7,27 +7,20 @@ Registered S3 method overwritten by 'pryr':
   method      from
   print.bytes Rcpp
 Saving 7 x 7 in image
-Error: `n_trees_in_file` not equal to `n_trees_in_output`.
-1/1 mismatches
-[1] 11754 - 10001 == 1753
-In addition: Warning messages:
-1: In scan(file = file, what = "", sep = "\n", quiet = TRUE) :
-  embedded nul(s) found in input
-2: In scan(file = file, what = "", sep = "\n", quiet = TRUE) :
-  embedded nul(s) found in input
-3: In scan(file = file, what = "", sep = "\n", quiet = TRUE) :
-  embedded nul(s) found in input
-Execution halted
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
 
-real	184m36.600s
-user	171m6.403s
-sys	4m15.874s
+real	186m53.559s
+user	172m13.536s
+sys	4m23.897s
 
 
 ###############################################################################
 Peregrine Cluster
-Job 10128587 for user 'p230198'
-Finished at: Mon Mar 16 14:49:17 CET 2020
+Job 10130896 for user 'p230198'
+Finished at: Mon Mar 16 18:24:11 CET 2020
 
 Job details:
 ============
@@ -35,21 +28,21 @@ Job details:
 Name                : pirouette_example_28
 User                : p230198
 Partition           : regular
-Nodes               : pg-node008
+Nodes               : pg-node013
 Cores               : 1
-State               : FAILED
-Submit              : 2020-03-16T11:40:15
-Start               : 2020-03-16T11:44:39
-End                 : 2020-03-16T14:49:17
+State               : COMPLETED
+Submit              : 2020-03-16T15:17:15
+Start               : 2020-03-16T15:17:16
+End                 : 2020-03-16T18:24:10
 Reserved walltime   : 1-00:00:00
-Used walltime       :   03:04:38
-Used CPU time       :   02:55:22 (efficiency: 94.98%)
-% User (Computation): 97.57%
-% System (I/O)      :  2.43%
+Used walltime       :   03:06:54
+Used CPU time       :   02:56:38 (efficiency: 94.51%)
+% User (Computation): 97.50%
+% System (I/O)      :  2.49%
 Mem reserved        : 10G/node
-Max Mem used        : 1023.72M (pg-node008)
-Max Disk Write      : 71.68K (pg-node008)
-Max Disk Read       : 1.35M (pg-node008)
+Max Mem used        : 962.30M (pg-node013)
+Max Disk Write      : 71.68K (pg-node013)
+Max Disk Read       : 1.35M (pg-node013)
 
 
 Acknowledgements:
