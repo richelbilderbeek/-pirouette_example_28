@@ -9,6 +9,7 @@
 ^CODE_OF_CONDUCT\.md$
 ^NEWS\.md$
 ^appveyor\.yml$
+^example_28\.R$
 ^example_28\.log$
 ^example_28$
 ^LICENSE$
