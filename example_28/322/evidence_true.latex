@@ -1,0 +1,27 @@
+% latex table generated in R 3.6.1 by xtable 1.8-4 package
+% Tue Mar 17 20:38:07 2020
+\begin{table}[ht]
+\centering
+\begin{tabular}{lllrrrr}
+  \hline
+Site model & Clock model & Tree prior & log(evidence) & log(evidence error) & Weight & ESS \\ 
+  \hline
+GTR & RLN & BD & -6796.012 & 7.602 & 0.000 & 12.018 \\ 
+  GTR & RLN & Yule & -6779.416 & 5.760 & 0.000 & 6.668 \\ 
+  GTR & Strict & BD & -6829.317 & 6.022 & 0.000 & 7.040 \\ 
+  GTR & Strict & Yule & -6852.261 & 6.162 & 0.000 & 8.615 \\ 
+  HKY & RLN & BD & -6762.120 & 3.539 & 0.023 & 7.348 \\ 
+  HKY & RLN & Yule & -6760.077 & 3.601 & 0.175 & 9.776 \\ 
+  HKY & Strict & BD & -6775.804 & 4.614 & 0.000 & 8.399 \\ 
+  HKY & Strict & Yule & -6781.940 & 5.337 & 0.000 & 10.593 \\ 
+  JC & RLN & BD & -6758.553 & 3.156 & 0.802 & 5.904 \\ 
+  JC & RLN & Yule & -6768.040 & 5.100 & 0.000 & 6.768 \\ 
+  JC & Strict & BD & -6766.059 & 3.920 & 0.000 & 4.089 \\ 
+  TN & RLN & BD & -6783.488 & 5.482 & 0.000 & 12.975 \\ 
+  TN & RLN & Yule & -6772.052 & 4.600 & 0.000 & 7.344 \\ 
+  TN & Strict & BD & -6774.294 & 5.472 & 0.000 & 6.599 \\ 
+  TN & Strict & Yule & -6772.458 & 4.968 & 0.000 & 9.850 \\ 
+   \hline
+\end{tabular}
+\caption{Evidences for the true phylogeny} 
+\end{table}

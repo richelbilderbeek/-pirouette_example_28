@@ -1,0 +1,18 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:alignment_twin'>((0:0.9487326030306146,((3:0.6295332216804609,6:0.6295332216804609)13:0.17392669996451338,5:0.8034599216449743)10:0.1452726813856403)8:0.010065613598493228,((1:0.34144857531119094,(2:0.08501814777832635,7:0.08501814777832635)12:0.2564304275328646)11:0.04291252116283917,4:0.3843610964740301)9:0.5744371201550778)14:0.0</statenode>
+<statenode id='BDBirthRate.t:alignment_twin'>BDBirthRate.t:alignment_twin[1 1] (0.0,10000.0): 0.8323896985414176 </statenode>
+<statenode id='BDDeathRate.t:alignment_twin'>BDDeathRate.t:alignment_twin[1 1] (0.0,1.0): 0.5673601290597619 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"BirthRateScaler.t:alignment_twin","p":0.21243108321480234,"accept":106250,"reject":278234,"acceptFC":105321,"rejectFC":278023,"rejectIv":0,"rejectOp":0},
+{"id":"DeathRateScaler.t:alignment_twin","p":0.1314401887109843,"accept":92727,"reject":292313,"acceptFC":91830,"rejectFC":292081,"rejectIv":154584,"rejectOp":154584},
+{"id":"BirthDeathTreeScaler.t:alignment_twin","p":0.7829802464509849,"accept":58751,"reject":325736,"acceptFC":58675,"rejectFC":324667,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathTreeRootScaler.t:alignment_twin","p":0.7058927444686739,"accept":67315,"reject":317218,"acceptFC":67226,"rejectFC":316236,"rejectIv":93141,"rejectOp":93141},
+{"id":"BirthDeathUniformOperator.t:alignment_twin","p":"NaN","accept":720458,"reject":3124986,"acceptFC":718406,"rejectFC":3116085,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathSubtreeSlide.t:alignment_twin","p":0.2302452067758056,"accept":305883,"reject":1617633,"acceptFC":305659,"rejectFC":1612340,"rejectIv":299261,"rejectOp":299261},
+{"id":"BirthDeathNarrow.t:alignment_twin","p":"NaN","accept":110157,"reject":1812779,"acceptFC":109792,"rejectFC":1807439,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathWide.t:alignment_twin","p":"NaN","accept":2159,"reject":382100,"acceptFC":2148,"rejectFC":381013,"rejectIv":207167,"rejectOp":207167},
+{"id":"BirthDeathWilsonBalding.t:alignment_twin","p":"NaN","accept":656,"reject":384646,"acceptFC":655,"rejectFC":383562,"rejectIv":142799,"rejectOp":142799}
+]}
+-->

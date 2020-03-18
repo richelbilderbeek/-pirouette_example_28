@@ -1,0 +1,18 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:alignment'>(((0:0.6140625791081051,3:0.6140625791081051)4:0.06358771454201118,2:0.6776502936501163)5:0.17786841947395227,1:0.8555187131240686)6:0.0</statenode>
+<statenode id='BDBirthRate.t:alignment'>BDBirthRate.t:alignment[1 1] (0.0,10000.0): 0.916059274260957 </statenode>
+<statenode id='BDDeathRate.t:alignment'>BDDeathRate.t:alignment[1 1] (0.0,1.0): 0.5355374887032608 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"BirthRateScaler.t:alignment","p":0.1744004015201921,"accept":110248,"reject":274912,"acceptFC":109331,"rejectFC":274750,"rejectIv":0,"rejectOp":0},
+{"id":"DeathRateScaler.t:alignment","p":0.11831444366711791,"accept":85422,"reject":298593,"acceptFC":84542,"rejectFC":298379,"rejectIv":178650,"rejectOp":178650},
+{"id":"BirthDeathTreeScaler.t:alignment","p":0.7203834390535333,"accept":68091,"reject":316452,"acceptFC":68011,"rejectFC":315414,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathTreeRootScaler.t:alignment","p":0.5978166961313501,"accept":71429,"reject":314472,"acceptFC":71276,"rejectFC":313528,"rejectIv":39221,"rejectOp":39221},
+{"id":"BirthDeathUniformOperator.t:alignment","p":"NaN","accept":810930,"reject":3038170,"acceptFC":808624,"rejectFC":3029628,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathSubtreeSlide.t:alignment","p":0.28846148603074956,"accept":344064,"reject":1578729,"acceptFC":343774,"rejectFC":1573404,"rejectIv":206516,"rejectOp":206516},
+{"id":"BirthDeathNarrow.t:alignment","p":"NaN","accept":188684,"reject":1731547,"acceptFC":188127,"rejectFC":1726490,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathWide.t:alignment","p":"NaN","accept":10094,"reject":373475,"acceptFC":10062,"rejectFC":372405,"rejectIv":229702,"rejectOp":229702},
+{"id":"BirthDeathWilsonBalding.t:alignment","p":"NaN","accept":2261,"reject":382428,"acceptFC":2256,"rejectFC":381312,"rejectIv":271836,"rejectOp":271836}
+]}
+-->

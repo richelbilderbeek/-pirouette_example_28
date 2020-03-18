@@ -1,0 +1,19 @@
+% latex table generated in R 3.6.1 by xtable 1.8-4 package
+% Tue Mar 17 20:34:50 2020
+\begin{table}[ht]
+\centering
+\begin{tabular}{ll}
+  \hline
+parameter & ESS \\ 
+  \hline
+posterior & 9986 \\ 
+  likelihood & 9984 \\ 
+  prior & 10001 \\ 
+  treeLikelihood & 9984 \\ 
+  TreeHeight & 9997 \\ 
+  YuleModel & 10001 \\ 
+  birthRate & 10001 \\ 
+   \hline
+\end{tabular}
+\caption{ESSes for generative model} 
+\end{table}

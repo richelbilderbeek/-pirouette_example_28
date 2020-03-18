@@ -1,0 +1,22 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:alignment_twin'>((0:0.369666277807942,3:0.369666277807942)7:0.5770052248548734,((1:0.12298881698948012,4:0.12298881698948012)6:0.1252108017236621,2:0.24819961871314222)5:0.6984718839496731)8:0.0</statenode>
+<statenode id='ucldStdev.c:alignment_twin'>ucldStdev.c:alignment_twin[1 1] (0.0,Infinity): 0.01627044702706197 </statenode>
+<statenode id='rateCategories.c:alignment_twin'>rateCategories.c:alignment_twin[8 1] (0,7): 2 7 5 0 4 6 0 6 </statenode>
+<statenode id='birthRate.t:alignment_twin'>birthRate.t:alignment_twin[1 1] (-Infinity,Infinity): 0.5831244809764602 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"YuleBirthRateScaler.t:alignment_twin","p":0.19620242342921443,"accept":80289,"reject":197044,"acceptFC":79335,"rejectFC":196902,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeScaler.t:alignment_twin","p":0.7632463548557514,"accept":53826,"reject":223615,"acceptFC":53750,"rejectFC":222572,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeRootScaler.t:alignment_twin","p":0.6266599771964376,"accept":64509,"reject":214124,"acceptFC":64346,"rejectFC":213168,"rejectIv":314,"rejectOp":314},
+{"id":"YuleModelUniformOperator.t:alignment_twin","p":"NaN","accept":208306,"reject":2567236,"acceptFC":207474,"rejectFC":2556986,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelSubtreeSlide.t:alignment_twin","p":0.39460324948727943,"accept":116881,"reject":1272208,"acceptFC":116656,"rejectFC":1266844,"rejectIv":338399,"rejectOp":338399},
+{"id":"YuleModelNarrow.t:alignment_twin","p":"NaN","accept":2354,"reject":1387274,"acceptFC":2348,"rejectFC":1381756,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelWide.t:alignment_twin","p":"NaN","accept":74,"reject":277584,"acceptFC":74,"rejectFC":276464,"rejectIv":158817,"rejectOp":158817},
+{"id":"YuleModelWilsonBalding.t:alignment_twin","p":"NaN","accept":5,"reject":276726,"acceptFC":5,"rejectFC":275635,"rejectIv":151332,"rejectOp":151332},
+{"id":"ucldStdevScaler.c:alignment_twin","p":0.1923233046360082,"accept":79968,"reject":197180,"acceptFC":79265,"rejectFC":196805,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesRandomWalk.c:alignment_twin","p":"NaN","accept":464332,"reject":462781,"acceptFC":462414,"rejectFC":460977,"rejectIv":385213,"rejectOp":385213},
+{"id":"CategoriesSwapOperator.c:alignment_twin","p":"NaN","accept":657122,"reject":268774,"acceptFC":654424,"rejectFC":267836,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesUniform.c:alignment_twin","p":"NaN","accept":696969,"reject":230820,"acceptFC":694116,"rejectFC":230056,"rejectIv":0,"rejectOp":0}
+]}
+-->
