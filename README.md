@@ -23,7 +23,9 @@ sbatch scripts/rerun.sh
 
 ## Related settings
 
- * [One exemplary DD tree](https://github.com/richelbilderbeek/pirouette_example_30)
+ * [One exemplary DD tree (instead of 10)](https://github.com/richelbilderbeek/pirouette_example_30)
+ * [Ten replicates on artifical tree (instead of DD)](https://github.com/richelbilderbeek/pirouette_example_31)
+ * [DNA alignent of 500 nucleotides (instead of 1k)](https://github.com/richelbilderbeek/pirouette_example_19)
 
 ## Results
 
