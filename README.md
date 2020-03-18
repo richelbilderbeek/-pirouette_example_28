@@ -29,7 +29,7 @@ sbatch scripts/rerun.sh
 
 ![](example_28/errors.png)
 
-### Indiviudual results
+### Individual results
 
 ![](example_28/314/errors.png)
 ![](example_28/315/errors.png)
