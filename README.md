@@ -29,18 +29,8 @@ sbatch scripts/rerun.sh
 
 ## Results
 
-![](example_28/errors.png)
+ * Download the intermediate data at 
+   [https://www.richelbilderbeek.nl/pirouette_example_28.zip](https://www.richelbilderbeek.nl/pirouette_example_28.zip)
 
-### Individual results
-
-![](example_28/314/errors.png)
-![](example_28/315/errors.png)
-![](example_28/316/errors.png)
-![](example_28/317/errors.png)
-![](example_28/318/errors.png)
-![](example_28/319/errors.png)
-![](example_28/320/errors.png)
-![](example_28/321/errors.png)
-![](example_28/322/errors.png)
-![](example_28/323/errors.png)
+![](errors.png)
 
