@@ -12,7 +12,6 @@ r_github_packages:
   - richelbilderbeek/becosys
   - thijsjanzen/nodeSub
   - richelbilderbeek/pirouette
-  - richelbilderbeek/peregrine
 
 before_install:
   # ImageMagick

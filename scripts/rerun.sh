@@ -16,7 +16,7 @@
 #SBATCH --output=example_28.log
 #
 rm -rf example_28
-rm errors.png
+rm *.png
 time Rscript example_28.R
-zip -r pirouette_example_28.zip example_28 example_28.R scripts errors.png
+zip -r pirouette_example_28.zip example_28 example_28.R scripts *.png
 

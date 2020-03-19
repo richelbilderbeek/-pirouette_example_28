@@ -26,6 +26,8 @@ sbatch scripts/rerun.sh
  * [One exemplary DD tree (instead of 10)](https://github.com/richelbilderbeek/pirouette_example_30)
  * [Ten replicates on artifical tree (instead of DD)](https://github.com/richelbilderbeek/pirouette_example_31)
  * [DNA alignent of 500 nucleotides (instead of 1k)](https://github.com/richelbilderbeek/pirouette_example_19)
+ * [Use 12 taxa (instead of 6)](https://github.com/richelbilderbeek/pirouette_example_32)
+ * [Use 24 taxa (instead of 6)](https://github.com/richelbilderbeek/pirouette_example_33)
 
 ## Results
 
