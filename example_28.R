@@ -18,30 +18,11 @@ if (is_testing) {
   n_phylogenies <- 2
 }
 
-# Create simulation function
-sim_dd_tree_fun <- function(crown_age) {
-  extinction_rate <- 0.1
-  n_taxa <- 6
-  n_0 <- 2 # Initial number of species at stem/crown of tree
-  diff <- (log(n_taxa) - log(n_0)) / crown_age
-  speciation_rate <- 3.0 * (diff + extinction_rate)
-  carrying_capacity <- n_taxa # clade-level
-  dd_parameters <- c(speciation_rate, extinction_rate, carrying_capacity)
-  ddmodel <- 1 # linear dependence in speciation rate with parameter K
-  dd_sim_result <- DDD::dd_sim(pars = dd_parameters, age  = crown_age, ddmodel = ddmodel)
-  phylogeny <- dd_sim_result$tes # Only extant species
-  phylogeny
-}
-sim_tree_fun <- pryr::partial(
-  sim_dd_tree_fun,
-  crown_age = crown_age
-)
-
 # Create phylogenies
 phylogenies <- list()
 for (i in seq_len(n_phylogenies)) {
   set.seed(314 - 1 + i)
-  phylogenies[[i]] <- sim_tree_fun()
+  phylogenies[[i]] <- create_exemplary_dd_tree(n_taxa = n_taxa, crown_age = crown_age)
 }
 expect_equal(length(phylogenies), n_phylogenies)
 
