@@ -32,8 +32,12 @@ script:
 after_success:
   - Rscript -e "mcbette::mcbette_report()"
   - find .
+  # Download thesis
+  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
 after_failure:
   - Rscript -e "mcbette::mcbette_report()"
   - find .
+  # Download thesis
+  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
