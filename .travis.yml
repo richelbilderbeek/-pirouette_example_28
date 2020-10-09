@@ -7,7 +7,7 @@ r_github_packages:
   - richelbilderbeek/beastier
   - richelbilderbeek/babette
   - richelbilderbeek/tiebeaur
-  - richelbilderbeek/mcbette
+  - ropensci/mcbette
   - thijsjanzen/nodeSub
   - richelbilderbeek/pirouette
 

@@ -30,7 +30,7 @@ build_script:
   - travis-tool.sh install_github ropensci/babette
   - travis-tool.sh install_github jimhester/covr
   - travis-tool.sh install_github jimhester/lintr
-  - travis-tool.sh install_github richelbilderbeek/mcbette
+  - travis-tool.sh install_github ropensci/mcbette
   - travis-tool.sh install_github richelbilderbeek/tiebeaur
   - travis-tool.sh install_github thijsjanzen/nLTT
   - travis-tool.sh install_r fansi
