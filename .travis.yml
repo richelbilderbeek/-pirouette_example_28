@@ -1,14 +1,8 @@
 language: r
-dist: bionic
 cache: packages
 
 r_github_packages:
-  - richelbilderbeek/beautier
-  - richelbilderbeek/beastier
-  - richelbilderbeek/mauricer
-  - richelbilderbeek/babette
   - richelbilderbeek/tiebeaur
-  - ropensci/mcbette
   - thijsjanzen/nodeSub
   - richelbilderbeek/pirouette
 
