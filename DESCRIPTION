@@ -14,7 +14,7 @@ Description: A 'pirouette' example.
 License: GPL-3
 Encoding: UTF-8
 Imports: 
-    beastier (>= 2.0.25),
+    beastier (>= 2.4),
     beautier (>= 2.5.2),
     ggplot2,
     pirouette (>= 1.6),
