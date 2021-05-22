@@ -15,7 +15,7 @@ License: GPL-3
 Encoding: UTF-8
 Imports: 
     beastier (>= 2.0.25),
-    beautier (>= 2.3),
+    beautier (>= 2.5.2),
     ggplot2,
     pirouette (>= 1.6),
     nLTT (>= 1.4.2)
