@@ -13,7 +13,6 @@ Description: A 'pirouette' example.
   at <https://github.com/richelbilderbeek/pirouette_examples>.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports: 
     beastier (>= 2.0.25),
     beautier (>= 2.3),
